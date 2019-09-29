@@ -1,22 +1,23 @@
-from django.shortcuts import render
-import re
-from datetime import datetime
 
-# Create your views here.
+# import re
+# from datetime import datetime
+
+# # Create your views here.
 from django.http import HttpResponse
+from django.shortcuts import render
 
 def home(request):
-    return render(request, "hello/home.html")
+     return render(request, "hello/home.html")
 
-def about(request):
-    return render(request, "hello/about.html")
+# def about(request):
+#     return render(request, "hello/about.html")
 
-def hello_there(request, name):
-    return render(
-        request,
-        'hello/hello_there.html',
-        {
-            'name': name,
-            'date': datetime.now()
-        }
-    )
+# def hello_there(request, name):
+#     return render(
+#         request,
+#         'hello/hello_there.html',
+#         {
+#             'name': name,
+#             'date': datetime.now()
+#         }
+#     )

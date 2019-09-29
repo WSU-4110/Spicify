@@ -1,0 +1,214 @@
+[29/Sep/2019 12:57:38] DEBUG [django.db.backends:110] (0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[29/Sep/2019 12:57:38] DEBUG [django.db.backends:110] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[29/Sep/2019 12:57:53] DEBUG [django.template:872] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\core\handlers\base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\urls\resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'hello.urls' from 'C:\\Users\\gmarc\\OneDrive\\Desktop\\Spicify\\hello\\urls.py'> (None:None) ''>, <URLPattern 'home/' [name='home']>], [<URLResolver <module 'hello.urls' from 'C:\\Users\\gmarc\\OneDrive\\Desktop\\Spicify\\hello\\urls.py'> (None:None) ''>, <URLPattern 'about/' [name='about']>], [<URLResolver <module 'hello.urls' from 'C:\\Users\\gmarc\\OneDrive\\Desktop\\Spicify\\hello\\urls.py'> (None:None) ''>, <URLPattern 'hello/<name>' [name='hello_there']>], [<URLPattern 'home/' [name='home']>], [<URLPattern 'about/' [name='about']>], [<URLPattern 'hello/<name>' [name='hello_there']>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': ''}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+[29/Sep/2019 12:57:53] WARNING [django.request:228] Not Found: /
+[29/Sep/2019 12:57:53] WARNING [django.server:154] "GET / HTTP/1.1" 404 2946
+[29/Sep/2019 13:08:37] DEBUG [django.db.backends:110] (0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[29/Sep/2019 13:08:37] DEBUG [django.db.backends:110] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[29/Sep/2019 13:08:40] DEBUG [django.template:872] Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\core\handlers\base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\urls\resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'hello.urls' from 'C:\\Users\\gmarc\\OneDrive\\Desktop\\Spicify\\hello\\urls.py'> (None:None) ''>, <URLPattern 'home/' [name='home']>], [<URLResolver <module 'hello.urls' from 'C:\\Users\\gmarc\\OneDrive\\Desktop\\Spicify\\hello\\urls.py'> (None:None) ''>, <URLPattern 'about/' [name='about']>], [<URLResolver <module 'hello.urls' from 'C:\\Users\\gmarc\\OneDrive\\Desktop\\Spicify\\hello\\urls.py'> (None:None) ''>, <URLPattern 'hello/<name>' [name='hello_there']>], [<URLPattern 'home/' [name='home']>], [<URLPattern 'about/' [name='about']>], [<URLPattern 'hello/<name>' [name='hello_there']>], [<URLPattern '^static/(?P<path>.*)$'>]], 'path': ''}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+[29/Sep/2019 13:08:40] WARNING [django.request:228] Not Found: /
+[29/Sep/2019 13:08:40] WARNING [django.server:154] "GET / HTTP/1.1" 404 2946
+[29/Sep/2019 13:17:31] DEBUG [django.db.backends:110] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[29/Sep/2019 13:17:31] DEBUG [django.db.backends:110] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[29/Sep/2019 13:17:33] INFO [django.server:154] "GET / HTTP/1.1" 200 7
+[29/Sep/2019 13:19:40] DEBUG [django.db.backends:110] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[29/Sep/2019 13:19:40] DEBUG [django.db.backends:110] (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[29/Sep/2019 13:19:44] INFO [django.server:154] "GET / HTTP/1.1" 200 7
+[29/Sep/2019 13:22:08] DEBUG [django.db.backends:110] (0.002) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[29/Sep/2019 13:22:08] DEBUG [django.db.backends:110] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[29/Sep/2019 13:22:12] ERROR [django.request:228] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\hello\views.py", line 9, in home
+    return render(request, "hello/home.html")
+NameError: name 'render' is not defined
+[29/Sep/2019 13:22:12] ERROR [django.server:154] "GET / HTTP/1.1" 500 67181
+[29/Sep/2019 13:23:26] DEBUG [django.db.backends:110] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[29/Sep/2019 13:23:26] DEBUG [django.db.backends:110] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[29/Sep/2019 13:23:31] ERROR [django.request:228] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\hello\views.py", line 10, in home
+    return render(request, "hello/home.html")
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\defaulttags.py", line 443, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\urls\base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\urls\resolvers.py", line 673, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'about' not found. 'about' is not a valid view function or pattern name.
+[29/Sep/2019 13:23:31] ERROR [django.server:154] "GET / HTTP/1.1" 500 131260
+[29/Sep/2019 13:24:18] DEBUG [django.db.backends:110] (0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[29/Sep/2019 13:24:18] DEBUG [django.db.backends:110] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[29/Sep/2019 13:24:21] ERROR [django.request:228] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\hello\views.py", line 10, in home
+    return render(request, "hello/home.html")
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\template\defaulttags.py", line 443, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\urls\base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "C:\Users\gmarc\OneDrive\Desktop\Spicify\env\lib\site-packages\django\urls\resolvers.py", line 673, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'about' not found. 'about' is not a valid view function or pattern name.
+[29/Sep/2019 13:24:21] ERROR [django.server:154] "GET / HTTP/1.1" 500 131260
+[29/Sep/2019 13:25:06] DEBUG [django.db.backends:110] (0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[29/Sep/2019 13:25:06] DEBUG [django.db.backends:110] (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+[29/Sep/2019 13:25:09] INFO [django.server:154] "GET / HTTP/1.1" 200 437
+[29/Sep/2019 13:25:09] INFO [django.server:154] "GET /static/hello/site.css HTTP/1.1" 200 604
