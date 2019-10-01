@@ -23,7 +23,6 @@ urlpatterns = [
 #     path('admin/', admin.site.urls),
       path("", include("hello.urls")),
 #     path("home/", views.home, name="home"),
-#     path("about/", views.about, name="about"),
 #     path("hello/<name>", views.hello_there, name="hello_there"),
 ]
 
