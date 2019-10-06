@@ -41,3 +41,5 @@ Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
 
 def beginPlaylist():
     spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
+
+beginPlaylist()
