@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-import SpotipyFunctions
+from hello import SpotipyFunctions
 from django.shortcuts import render
 
 
