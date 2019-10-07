@@ -1,3 +1,93 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background-color: black;
+    background-color: #333;
+    display: grid;
+    grid-template:
+    "nav categories" 1fr
+    "nav categories" 1fr
+    "footer footer" .5fr / 1fr 5fr;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+nav {
+    grid-area: nav;
+    background: #333;
+    height: 90vh;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    align-self: flex-start;
+    border-radius: 10px;
+}
+
+nav div {
+    display: flex;
+    align-self: flex-start;
+    margin: 40px 0 0 0;
+    width: 100%;
+}
+
+ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: flex-start;
+    
+}
+
+.cg {
+    grid-area: categories;
+}
+
+.buts {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.m {
+    color: white;
+    margin: 150px 0 50px 0;
+}
+
+footer {
+    grid-area: footer;
+    color: white;
+}
+
+.btn {
+ height: 35vh;   
+ width: 90%;
+ margin: 10px 0 10px 0;
+ display: flex;
+    justify-content: flex-end;
+text-shadow: 1px 1px rgb(78, 60, 60);
+font-weight: 800;
+font-size: 30px;
+}
+
+.a {
+background: url("https://img.freepik.com/free-photo/set-sports-attributes_23-2147778577.jpg?size=626&ext=jpg");
+}
+
+.b {
+    background: url("https://www.2drivesafe.com/wp-content/uploads/2014/08/tumblr_lwrpsiQDeL1r7h4kho1_1280.jpg")  no-repeat;
+}
+
+.c {
+    color: white;
+    background: url("https://i.ytimg.com/vi/wXV39pybgJU/hqdefault.jpg");
+}
+
+.e {
+    background: url("http://www.sphinxmusic.org/wordpress/wp-content/uploads/2018/03/StockSnap_V8JHI0GBEY.jpg") fixed right no-repeat;
+    background-size: 70% 100%;
 }
