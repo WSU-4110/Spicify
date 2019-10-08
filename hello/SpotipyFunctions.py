@@ -40,3 +40,5 @@ def beginPlaylist():
     spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
 
 beginPlaylist()
+
+# print(json.dumps(VARIABLE, sort_keys=True, indent=4))

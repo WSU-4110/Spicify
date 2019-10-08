@@ -40,19 +40,15 @@
 </head>
 
 <body>
-    <br>
-    <div class="container">
         <!-- Navigation bar with links -->
-        <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <div class="navbar-header">
-        </div>
+        <nav class="nav">
             <ul>
+                <div class="logo">Spicify</div>
                 <li><a class="navbar-brand" href="{% url 'home' %}">Home</a></li>
-            </ul> 
-            <ul>
                 <li><a class="navbar-brand" href="{% url 'category' %}">Categories</a></li>
-            </ul>    
+                <hr>
+                <li>Playlists</li>
+            </ul>   
          </nav>
     <footer>
         <p>© 2019</p>
