@@ -1,3 +1,28 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'hello/site.css' %}"/>
+</head>
+<body>
+<div class="navbar">
+    <p>
+    <a href="{% url 'home' %}" class="navbar-brand">Home</a>
+    <a href="{% url 'category' %}" class="navbar-brand">Categories</a>
+    </p>
+</div>
+<div class="body-content">
+    {% block content %}
+    {% endblock %}
+    <hr/>
+    <footer>
+        <p>© 2019</p>
+    </footer>
+</div>
+</body>
+</html> -->
 
 <!-- USING BOOTSTRAP -->
 <!DOCTYPE html>
@@ -16,14 +41,14 @@
 
 <body>
         <!-- Navigation bar with links -->
-        <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <div class="navbar-header">
-        </div>
+        <nav class="nav">
             <ul>
+                <div class="logo">Spicify</div>
                 <li><a class="navbar-brand" href="{% url 'home' %}">Home</a></li>
                 <li><a class="navbar-brand" href="{% url 'category' %}">Categories</a></li>
-            </ul>    
+                <hr>
+                <li>Playlists</li>
+            </ul>   
          </nav>
     <footer>
         <p>© 2019</p>
