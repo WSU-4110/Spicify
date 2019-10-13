@@ -30,7 +30,7 @@ tracks_uri = [] #empty list for track uris
 selectedWorkoutTracks_uri = [] # empty list to store songs for workout playlist
 for x in tracks: #store searched songs in lists
     tracks_name.append(x['name'])
-    if  x['popularity'] <= 40:
+    if  x['popularity'] >= 70:
         tracks_uri.append(x['uri'])
 
     
