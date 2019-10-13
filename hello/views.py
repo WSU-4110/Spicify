@@ -20,3 +20,4 @@ def category(request):
 
 def layout(request):
     return render(request, 'hello/layout.html')
+
