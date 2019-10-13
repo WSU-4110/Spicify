@@ -1,7 +1,6 @@
 from django.http import HttpResponse
-from hello import SpotipyFunctions
 from django.shortcuts import render
-
+from hello import SpotipyFunctions
 
 def home(request):
     return render(request, 'hello/home.html')
