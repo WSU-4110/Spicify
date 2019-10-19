@@ -8,32 +8,32 @@ Home
     <p class="m">Choose the catgeory of the Playlist you wish to create</p>
     <div class="buts">
         <!-- button to select workout playlist -->
-        <a href="http://www.spotify.com">
+        <a href="{% url 'workout' %}">
         <button type="button" class="a btns">Workout</button>
         </a>
 
         <!-- button to select general driving playlist -->
-        <a href="http://www.spotify.com">
+        <a href="{% url 'category' %}">
         <button type="button" class="b btns">General Driving</button>
         </a>
 
         <!-- button to select international playlist -->
-        <a href="http://www.spotify.com">
+        <a href="{% url 'category' %}">
         <button type="button" class="c btns">International</button>
         </a>
 
         <!-- button to select year range playlist -->
-        <a href="http://www.spotify.com">
+        <a href="{% url 'category' %}">
         <button type="button" class="d btns">Year Range</button>
         </a>
 
         <!-- button to select study playlist -->
-        <a href="http://www.spotify.com">
+        <a href="{% url 'category' %}">
         <button type="button" class="e btns">Study</button>
         </a>
 
         <!-- button to select artist's followers playlist -->
-        <a href="http://www.spotify.com">
+        <a href="{% url 'category' %}">
         <button type="button" class="f btns">Artist's Followers</button>
         </a>
     </div>

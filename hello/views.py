@@ -1,9 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from hello import SpotipyFunctions
+from hello.models import Login
+import requests
 
 def home(request):
-    return render(request, 'hello/home.html')
+    login = Login.SpotifyLogin
+    context = {'login': login}
+    return render(request, 'hello/home.html', context)
 
 def hello_there(request, name):
     return render(
@@ -21,3 +24,7 @@ def category(request):
 def layout(request):
     return render(request, 'hello/layout.html')
 
+def workout(request):
+    return render(request, 'hello/workout.html', context)
+     
+    
