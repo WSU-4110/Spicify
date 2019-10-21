@@ -29,7 +29,24 @@ displayname = user['display_name']
 followers = user['followers']['total']
 
 
-print()
 print("Welcome to Spicify " + displayname, "!")
 print("You have " + str(followers) + " followers.")
+
+# getting user's playlists
+
+# import pprint
+# import sys
+# import os
+# import subprocess
+
+
+# token = util.prompt_for_user_token(username)
+
+# if token:
+#     sp = spotipy.Spotify(auth=token)
+#     playlists = sp.user_playlists(username)
+#     for playlist in playlists['items']:
+#         print(playlist['name'])
+# else:
+#     print("Can't get token for", username)
 

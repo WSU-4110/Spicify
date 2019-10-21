@@ -1,3 +1,9 @@
+/* main css */
+
+
+
+/* dashboard css */
+
 *, *::after, *::before {
     margin: 0;
     padding: 0;
@@ -18,7 +24,7 @@ body {
 
 
 
-.nav {
+.dash-nav {
     grid-area: "nav";
     background: #1f1e1e;
     /* height: 90vh; */
@@ -38,10 +44,10 @@ body {
     body {
         overflow: hidden;
     }
-    .nav {
+    .dash-nav {
         height: 100vh;
     }
-    .nav ul {
+    .dash-nav ul {
         height: 100%;
     }
 
@@ -56,7 +62,7 @@ body {
     }
 }
 
-.nav ul {
+.dash-nav ul {
     background: #2b2929;
     width: 100%;
     list-style: none;
@@ -69,17 +75,17 @@ body {
     /* height: 100%; */
 }
 
-.nav li a {
+.dash-nav li a {
     text-decoration: none;
     color: #fff;
 }
 
-.nav li a:hover {
+.dash-nav li a:hover {
     text-decoration: underline;
     text-decoration-color: white;
 }
 
-.nav .logo {
+.dash-nav .logo {
     /* display: flex; */
     /* align-self: flex-start; */
    display: flex;
@@ -211,16 +217,16 @@ footer {
         "footer" 1fr / 1fr
     }
 
-    nav {
+    .dash-nav {
         grid-area: nav;
         height: 50%;
     }
 
-    nav ul {
+    .dash-nav ul {
         height: 0%;
     }
 
-    nav ul li {
+    .dash-nav ul li {
         display: none;
         /* height: 0%; */
     }

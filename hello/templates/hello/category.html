@@ -4,6 +4,20 @@ Home
 {% endblock %}
 {% block content %} -->
 
+<nav class="dash-nav">
+            <ul>
+                <div class="logo">Spicify</div>
+                <li><a class="navbar-brand" href="{% url 'home' %}">Home</a></li>
+                <li><a class="navbar-brand" href="{% url 'category' %}">Categories</a></li>
+                <li class="message">{{name}}</li>
+                <hr>
+                <li>Playlists</li>
+                <!-- <ul class="playlists">
+                    <li></li>
+                </ul> -->
+            </ul>   
+ </nav>
+
 <div class="cg">
     <p class="m">Choose the catgeory of the Playlist you wish to create</p>
     <div class="buts">
