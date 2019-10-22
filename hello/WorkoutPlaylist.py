@@ -19,50 +19,52 @@ except:
 spotifyObject = spotipy.Spotify(auth=token)
 
 
-# # Search query and results
-# searchResults = spotifyObject.search('genre:southern+pop', 50, 0, 'track')
-# searchResults = spotifyObject.search('genre:indie+rocks'and'year:2007-2016', 50, 0, 'track')
-# tracks = searchResults['tracks']['items']
-# # for x in tracks:
-# #     print(x['name'])
-# # print(tracks)
-# tracks_name = [] #empty list for track names
-# tracks_uri = [] #empty list for track uris
-# selectedWorkoutTracks_uri = [] # empty list to store songs for workout playlist
-# for x in tracks: #store searched songs in lists
-#     tracks_name.append(x['name'])
-#     if 60 <= x['popularity']:
-#         tracks_uri.append(x['uri'])
+# Search query and results
+searchResults = spotifyObject.search('genre:southern+pop', 50, 0, 'track')
+searchResults = spotifyObject.search('genre:indie+rocks'and'year:2007-2016', 50, 0, 'track')
+tracks = searchResults['tracks']['items']
+# for x in tracks:
+#     print(x['name'])
+# print(tracks)
+tracks_name = [] #empty list for track names
+tracks_uri = [] #empty list for track uris
+selectedWorkoutTracks_uri = [] # empty list to store songs for workout playlist
+for x in tracks: #store searched songs in lists
+    tracks_name.append(x['name'])
+    if 60 <= x['popularity']:
+        tracks_uri.append(x['uri'])
 
 
     
 # function to narrorw down search to match our workout sound attributes
-# def workoutTracks_uri(spotifyObject, tracks_uri):
-#     for tracks in tracks_uri: #look through searched tracks uri
-#         selected_tracks_data = spotifyObject.audio_features(tracks) #get audio features of searched track
-#         for track_data in selected_tracks_data:
-#             if 0.8 <= track_data['energy'] <= 1.0:
-#                 selectedWorkoutTracks_uri.append(track_data['uri'])
-#             elif 130 <= track_data['tempo'] <= 135:
-#                 selectedWorkoutTracks_uri.append(track_data['uri'])
-#             elif 0.5 <= track_data['valence'] <= 1.0:
-#                 selectedWorkoutTracks_uri.append(track_data['uri'])
-#             elif 0.7 <= track_data['loudness'] <= 1.0:
-#                 selectedWorkoutTracks_uri.append(track_data['uri'])
+def workoutTracks_uri():
+    for tracks in tracks_uri: #look through searched tracks uri
+        selected_tracks_data = spotifyObject.audio_features(tracks) #get audio features of searched track
+        for track_data in selected_tracks_data:
+            if 0.8 <= track_data['energy'] <= 1.0:
+                selectedWorkoutTracks_uri.append(track_data['uri'])
+            elif 130 <= track_data['tempo'] <= 135:
+                selectedWorkoutTracks_uri.append(track_data['uri'])
+            elif 0.5 <= track_data['valence'] <= 1.0:
+                selectedWorkoutTracks_uri.append(track_data['uri'])
+            elif 0.7 <= track_data['loudness'] <= 1.0:
+                selectedWorkoutTracks_uri.append(track_data['uri'])
         
-    # for x in selectedWorkoutTracks_uri:
-    #     print(x)
-    # return selectedWorkoutTracks_uri
+    for x in selectedWorkoutTracks_uri:
+        print(x)
+    return selectedWorkoutTracks_uri
 
 
-def savePlaylist(spotifyObject, selectedWorkoutTracks_uri):
+def savePlaylist():
     # username = '1299050167'
-    newPlaylist = spotifyObject.user_playlist_create(username, 'Spicify Workout 10/17/2019')
+    newPlaylist = spotifyObject.user_playlist_create(username, 'Spicify Workout 10/22/2019')
     playlistId = newPlaylist['id'] #create id for new playlist
     spotifyObject.user_playlist_add_tracks(username, playlistId, selectedWorkoutTracks_uri, position=None)
 
-workoutTracks_uri(spotifyObject, tracks_uri)
-savePlaylist(spotifyObject, selectedWorkoutTracks_uri)
+# workoutTracks_uri(spotifyObject, tracks_uri)
+# savePlaylist(spotifyObject, selectedWorkoutTracks_uri)
+
+
 
 
 

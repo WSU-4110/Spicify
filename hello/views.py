@@ -1,12 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from hello.models import Login
+from hello import SpotipyFunctions
+from hello import WorkoutPlaylist
+from hello import StudyPlaylist
 import requests
 
 def home(request):
-    login = Login.SpotifyLogin
-    context = {'login': login}
-    return render(request, 'hello/home.html', context)
+    return render(request, 'hello/home.html')
 
 def hello_there(request, name):
     return render(
@@ -25,6 +25,13 @@ def layout(request):
     return render(request, 'hello/layout.html')
 
 def workout(request):
-    return render(request, 'hello/workout.html', context)
+    WorkoutPlaylist.workoutTracks_uri()
+    WorkoutPlaylist.savePlaylist()
+    return render(request, 'hello/home.html')
+
+def study(request):
+    StudyPlaylist.studyPlaylist()
+    StudyPlaylist.savePlaylist()
+    return render(request, 'hello/home.html')
      
     
