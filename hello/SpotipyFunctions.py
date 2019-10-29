@@ -4,6 +4,15 @@ import spotipy.util as util
 from json.decoder import JSONDecodeError
 import json
 
+username = '22kpgi2vtrlebcei6eu37db7y'
+scope = 'user-read-private user-read-playback-state user-modify-playback-state'
+
+#22kpgi2vtrlebcei6eu37db7y
+
+#Easily Install the latest version of spotipy for playback functions:
+#pip install git+https://github.com/plamere/spotipy.git --upgrade
+
+
 username = input("Username: ")
 scope = 'user-library-read playlist-modify-public'
 try:
@@ -23,23 +32,6 @@ displayname = user['display_name']
 followers = user['followers']['total']
 
 
-print("Welcome to Spicify " + displayname, "!")
-print("You have " + str(followers) + " followers.")
+# print("Welcome to Spicify " + displayname, "!")
+# print("You have " + str(followers) + " followers.")
 
-# getting user's playlists
-
-# import pprint
-# import sys
-# import os
-# import subprocess
-
-
-# token = util.prompt_for_user_token(username)
-
-# if token:
-#     sp = spotipy.Spotify(auth=token)
-#     playlists = sp.user_playlists(username)
-#     for playlist in playlists['items']:
-#         print(playlist['name'])
-# else:
-#     print("Can't get token for", username)

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Spicify</title>
+
+    <!-- Link to bootstrap css library -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'hello/playlist_view.css' %}" type="text/css">
+</head>
+
+<body>
+
+    <div class="playlistView">
+        <h2 class="playlist_name">Playlist-name</h2>
+        <h4 class="exit">X</h4>
+        <div class="info">
+            <h3>Playlsit Name</h3>
+            <div class="rating">
+                <h4>Star Rating:</h4>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+        </div>
+        <div class="playlist-fillin">
+            Your playlist has been made
+        </div>
+    </div>
+</body>
+
+</html>
