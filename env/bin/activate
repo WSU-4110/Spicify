@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/travispreston/Desktop/DatabaseProject/Spicify/env"
+VIRTUAL_ENV="/Users/travispreston/Desktop/Spicify/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

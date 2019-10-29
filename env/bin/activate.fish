@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/travispreston/Desktop/DatabaseProject/Spicify/env"
+set -gx VIRTUAL_ENV "/Users/travispreston/Desktop/Spicify/env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
