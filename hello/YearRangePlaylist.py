@@ -297,4 +297,6 @@ def returnPlaylists():
         playlistList.append(myPlaylists[i]['name'])
     return playlistList
 
+NinetiesPlaylist()
+
 #print(json.dumps(Variable, sort_keys=True, indent=4))
