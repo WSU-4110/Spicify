@@ -8,6 +8,17 @@
             "name": "Python: Django",
             "type": "python",
             "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "args": [
+                "runserver",
+                "--noreload"
+            ],
+            "django": true
+        },
+        {
+            "name": "Python: Django",
+            "type": "python",
+            "request": "launch",
             "program": "${workspaceFolder}\\manage.py",
             "args": [
                 "runserver",

@@ -1,17 +1,11 @@
-import os
-import sys
-import json
 import spotipy
-import webbrowser
+import os
 import spotipy.util as util
 from json.decoder import JSONDecodeError
+import json
 
-
-username = input("Spotify Username: ")
-scope = 'user-read-private user-read-playback-state user-modify-playback-state'
-
-#22kpgi2vtrlebcei6eu37db7y
-
+username = input("Username: ")
+scope = 'user-library-read playlist-modify-public'
 try:
 
     token = util.prompt_for_user_token(username,scope,client_id='8ff0ccc6f1fb460e8fabbe33e0e42112',client_secret='03d0e4de0957434abcc60660045d7cfc',redirect_uri='https://www.google.com/')
@@ -49,4 +43,3 @@ print("You have " + str(followers) + " followers.")
 #         print(playlist['name'])
 # else:
 #     print("Can't get token for", username)
-
