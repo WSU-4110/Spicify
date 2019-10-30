@@ -1,0 +1,62 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-image: linear-gradient(90deg, #656565 , #000);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+} 
+
+.playlistView {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  width: 50%;
+  margin: 5% 25%;
+  min-height: 300px;
+  box-shadow: 1px 1px 10px #000; 
+  border-radius: 6px;
+  display: grid;
+  grid-template:
+    "name name exit" 40px
+    "rating playlist playlist" 1fr
+    "rating playlist playlist" 1fr / 150px 1fr 1fr;
+  padding: 4px 10px;
+}
+
+.playlist_name {
+  grid-area: name;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 5px;
+}
+
+.exit {
+  grid-area: exit;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.playlist-fillin {
+  grid-area: playlist;
+  color: white;
+  background: #454545;
+  padding: 3px 3px;
+  height: 100%;
+  width: 100%;
+}
+
+.info {
+  grid-area: rating;
+  display: grid;
+  grid-template-rows: 1fr 1fr 3fr;
+}
+
+
+.checked {
+  color: orange;
+}
