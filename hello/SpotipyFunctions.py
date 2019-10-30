@@ -4,7 +4,7 @@ import spotipy.util as util
 from json.decoder import JSONDecodeError
 import json
 
-username = input("Username: ")
+username = '22kpgi2vtrlebcei6eu37db7y'
 scope = 'user-library-read playlist-modify-public'
 try:
 
