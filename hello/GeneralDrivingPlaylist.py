@@ -23,9 +23,6 @@ user = spotifyObject.current_user()
 # Search query and results
 searchResults3 = spotifyObject.search('genre:deep+chill', 50, 0, 'track')
 tracks = searchResults3['tracks']['items']
-# for x in tracks:
-#     print(x['name'])
-# print(tracks)
 tracks_name = [] #empty list for track names
 tracks_uri = [] #empty list for track uris
 selectedDrivingTracks_uri = [] # empty list to store songs for workout playlist
@@ -47,9 +44,6 @@ def drivingTracks_uri():
                 selectedDrivingTracks_uri.append(track_data['uri'])
             elif 0.4 <= track_data['liveness'] <= 1.0:
                 selectedDrivingTracks_uri.append(track_data['uri'])
-        
-    for x in selectedDrivingTracks_uri:
-        print(x)
     return selectedDrivingTracks_uri
 
 
@@ -58,5 +52,5 @@ def savePlaylist():
     playlistId = newPlaylist['id'] #create id for new playlist
     spotifyObject.user_playlist_add_tracks(user['id'], playlistId, selectedDrivingTracks_uri, position=None)
 
-# drivingTracks_uri()
-# savePlaylist()
+drivingTracks_uri()
+savePlaylist()

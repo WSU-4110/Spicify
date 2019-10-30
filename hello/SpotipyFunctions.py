@@ -5,15 +5,6 @@ from json.decoder import JSONDecodeError
 import json
 
 username = '22kpgi2vtrlebcei6eu37db7y'
-scope = 'user-read-private user-read-playback-state user-modify-playback-state'
-
-#22kpgi2vtrlebcei6eu37db7y
-
-#Easily Install the latest version of spotipy for playback functions:
-#pip install git+https://github.com/plamere/spotipy.git --upgrade
-
-
-username = input("Username: ")
 scope = 'user-library-read playlist-modify-public'
 try:
 

@@ -59,8 +59,8 @@ def savePlaylist():
     playlistId = newPlaylist['id'] #create id for new playlist
     spotifyObject.user_playlist_add_tracks(user['id'], playlistId, selectedWorkoutTracks_uri, position=None)
 
-# workoutTracks_uri()
-# savePlaylist()
+workoutTracks_uri()
+savePlaylist()
 
 
 

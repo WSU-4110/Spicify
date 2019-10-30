@@ -1,14 +1,12 @@
-{
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "python.pythonPath": "C:\\Users\\gmarc\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe"
-}
-=======
-    "python.pythonPath": "C:\\Users\\User\\envs\\spicify\\Scripts\\python.exe"
-}
->>>>>>> 2b6927666212295d40e3e0cc86da66d6b4a47e94
-=======
-    "python.pythonPath": "C:\\Users\\User\\envs\\spicify\\Scripts\\python.exe"
-}
 
->>>>>>> 43789d3a6d79bec51df4ce3b4453925b2ec103f6
+    {    
+        "python.pythonPath": "C:\\Users\\gmarc\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe"
+    }
+   
+        "python.pythonPath": "C:\\Users\\User\\envs\\spicify\\Scripts\\python.exe"
+    }
+   
+        "python.pythonPath": "C:\\Users\\User\\envs\\spicify\\Scripts\\python.exe"
+    }
+    
+  
