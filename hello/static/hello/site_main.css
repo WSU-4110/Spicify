@@ -1,0 +1,110 @@
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  font-family: 'Oxygen', sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template:
+    "nav nav nav" 60px
+    "main main main" 90vh
+    "footer footer footer" 40px / 1fr 1fr 1fr;
+}
+
+nav {
+  grid-area: nav;
+  background: #3A3335;
+}
+
+nav ul {
+  list-style: none; 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.nnav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+#first {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 3px;
+  font-size: 2.1em;
+  color: #F0544F;
+}
+
+nav ul li {
+/*   padding-left: 0; */
+  font-size: 2rem;
+  padding: 10px 0; 
+}
+
+ul li a:hover {
+  background: rgba(0,0,0,0.3);
+  margin: 50px 0;
+  transform: rotate-x(40deg);
+}
+
+
+ul li a {
+  text-decoration: none;
+  color: #FDF0D5;
+}
+
+#first {
+  grid-column: 2/4;
+}
+
+#s {
+  
+}
+
+.main {
+  grid-area: main;
+  background: #FDF0D5;
+  display:grid;
+  grid-template: 
+    "a . ." 1fr 
+    ". . b" 1fr
+    "c . ." 1fr / 1fr 1fr 1fr;
+}
+
+.bl {
+  border-radius: 10px;
+  border: 3px solid #FF004D;
+}
+
+.block1 {
+  margin: 10px 0 10px 10px;
+  background: #333;
+  grid-area: a;
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+
+.block2 {
+  margin: 0 10px 0px 0;
+  grid-area: b;
+  background: #444;
+}
+
+.block3 {
+  margin: 0px 0px 10px 10px;
+  grid-area: c;
+  background: #333;
+}
+
+footer {
+  grid-area: footer;
+  background: #3A3335;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer p {
+  margin: 10px 100px 0 0;
+}
