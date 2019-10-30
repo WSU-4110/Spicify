@@ -30,8 +30,8 @@ displayname = user['display_name']
 followers = user['followers']['total']
 userId = user['id']
 
-def beginPlaylist():
-    spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
+# def beginPlaylist():
+#     spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
 
 def thirtiesPlaylist():
 

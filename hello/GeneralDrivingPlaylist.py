@@ -4,7 +4,7 @@ import spotipy.util as util
 from json.decoder import JSONDecodeError
 import json
 
-username = '22kpgi2vtrlebcei6eu37db7y'
+username = "22kpgi2vtrlebcei6eu37db7y"
 scope = 'playlist-read-collaborative playlist-modify-private playlist-modify-public playlist-read-private user-modify-playback-state user-read-currently-playing user-read-playback-state user-read-private user-read-email user-library-modify user-library-read user-follow-modify user-follow-read user-read-recently-played user-top-read streaming app-remote-control'
 
 try:
