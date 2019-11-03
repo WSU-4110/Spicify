@@ -42,6 +42,16 @@ def thirtiesPlaylist():
     songs = []
     randsongs = []      #Empty Arrays to store songs
 
+    searchResults = spotifyObject.search('1930s jazz', 1, 0, 'playlist')   #search for music
+
+    playlistResult = searchResults['playlists']['items'][0]['id']
+    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']  #Get playlists and playlist owners from search results
+
+    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+    for x in range(0,len(playlist['items'])):
+        songs.append(playlist['items'][x]['track']['uri'])  #fill playlist list with all songs from search results
+
     searchResults = spotifyObject.search('1930s music', 1, 0, 'playlist')   #search for music
 
     playlistResult = searchResults['playlists']['items'][0]['id']
@@ -52,7 +62,17 @@ def thirtiesPlaylist():
     for x in range(0,len(playlist['items'])):
         songs.append(playlist['items'][x]['track']['uri'])  #fill playlist list with all songs from search results
 
-    searchResults = spotifyObject.search('1930s nostalgia', 1, 0, 'playlist')       #Do another search for additional songs and veriety
+    searchResults = spotifyObject.search('1930', 1, 0, 'playlist')   #search for music
+
+    playlistResult = searchResults['playlists']['items'][0]['id']
+    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']  #Get playlists and playlist owners from search results
+
+    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+    for x in range(0,len(playlist['items'])):
+        songs.append(playlist['items'][x]['track']['uri'])  #fill playlist list with all songs from search results
+
+    searchResults = spotifyObject.search('1930s swing', 1, 0, 'playlist')       #Do another search for additional songs and veriety
 
     playlistResult = searchResults['playlists']['items'][0]['id']
     playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
@@ -62,10 +82,13 @@ def thirtiesPlaylist():
     for x in range(0,len(playlist['items'])):
         songs.append(playlist['items'][x]['track']['uri'])  #Add more songs to playlist list
 
-    for x in range(0,29):
+
+    for x in range(0,30):
         randsongs.append(songs[random.randint(0,(len(songs) - 1))])     #Fill randsongs list with  30 randomly selected songs from playlist list
 
+
     spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)  #Fill playlist with songs from randsongs list
+    spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)
 
 def fourtiesPlaylist():
 
@@ -86,10 +109,21 @@ def fourtiesPlaylist():
     for x in range(0,len(playlist['items'])):
         songs.append(playlist['items'][x]['track']['uri'])
 
+    searchResults = spotifyObject.search('1940s big bands', 1, 0, 'playlist')
+
+    playlistResult = searchResults['playlists']['items'][0]['id']
+    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+    for x in range(0,len(playlist['items'])):
+        songs.append(playlist['items'][x]['track']['uri'])
+
+
     for x in range(0,29):
         randsongs.append(songs[random.randint(0,(len(songs) - 1))])
-    print (len(songs))
-    print (len(randsongs))
+
+    print(randsongs)
 
     spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)
 
@@ -112,9 +146,38 @@ def fiftiesPlaylist():
     for x in range(0,len(playlist['items'])):
         songs.append(playlist['items'][x]['track']['uri'])
 
+    searchResults = spotifyObject.search('1950s rock and roll', 1, 0, 'playlist')
+
+    playlistResult = searchResults['playlists']['items'][0]['id']
+    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+    for x in range(0,len(playlist['items'])):
+        songs.append(playlist['items'][x]['track']['uri'])
+
+    searchResults = spotifyObject.search('1950s love songs', 1, 0, 'playlist')
+
+    playlistResult = searchResults['playlists']['items'][0]['id']
+    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+    for x in range(0,len(playlist['items'])):
+        songs.append(playlist['items'][x]['track']['uri'])
+
+    searchResults = spotifyObject.search('1950s jazz', 1, 0, 'playlist')
+
+    playlistResult = searchResults['playlists']['items'][0]['id']
+    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+    for x in range(0,len(playlist['items'])):
+        songs.append(playlist['items'][x]['track']['uri'])
+
     for x in range(0,29):
         randsongs.append(songs[random.randint(0,(len(songs) - 1))])
-    print(playlistUser)
 
     spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)
 
@@ -124,10 +187,32 @@ def sixtiesPlaylist():
     newPlaylist = spotifyObject.current_user_playlists()['items'][0]['id']
     newPlaylistUri = spotifyObject.current_user_playlists()['items'][0]['uri']
 
+
     songs = []
     randsongs = []
 
+
     searchResults = spotifyObject.search('1960s music', 1, 0, 'playlist')
+
+    playlistResult = searchResults['playlists']['items'][0]['id']
+    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+    for x in range(0,len(playlist['items'])):
+        songs.append(playlist['items'][x]['track']['uri'])
+
+    searchResults = spotifyObject.search('1960s soul', 1, 0, 'playlist')
+
+    playlistResult = searchResults['playlists']['items'][0]['id']
+    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+    for x in range(0,len(playlist['items'])):
+        songs.append(playlist['items'][x]['track']['uri'])
+
+    searchResults = spotifyObject.search('1960 something', 1, 0, 'playlist')
 
     playlistResult = searchResults['playlists']['items'][0]['id']
     playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
@@ -171,6 +256,38 @@ def eightiesPlaylist():
     for x in range(0,len(playlist['items'])):
         songs.append(playlist['items'][x]['track']['uri'])
 
+    searchResults = spotifyObject.search('1980s love songs', 1, 0, 'playlist')
+
+    playlistResult = searchResults['playlists']['items'][0]['id']
+    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+    for x in range(0,len(playlist['items'])):
+        songs.append(playlist['items'][x]['track']['uri'])
+
+    searchResults = spotifyObject.search('1980s rock', 1, 0, 'playlist')
+
+    playlistResult = searchResults['playlists']['items'][0]['id']
+    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+    for x in range(0,len(playlist['items'])):
+        songs.append(playlist['items'][x]['track']['uri'])
+
+
+    searchResults = spotifyObject.search('1980s retrogamer', 1, 0, 'playlist')
+
+    playlistResult = searchResults['playlists']['items'][0]['id']
+    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+    for x in range(0,len(playlist['items'])):
+        songs.append(playlist['items'][x]['track']['uri'])
+
+
     searchResults = spotifyObject.search('80s popped!', 1, 0, 'playlist')
 
     playlistResult = searchResults['playlists']['items'][0]['id']
@@ -205,6 +322,26 @@ def SeventiesPlaylist():
     for x in range(0,len(playlist['items'])):
         songs.append(playlist['items'][x]['track']['uri'])
 
+    searchResults = spotifyObject.search('All out 70s', 1, 0, 'playlist')
+
+    playlistResult = searchResults['playlists']['items'][0]['id']
+    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+    for x in range(0,len(playlist['items'])):
+        songs.append(playlist['items'][x]['track']['uri'])
+
+    searchResults = spotifyObject.search('1970s love songs', 1, 0, 'playlist')
+
+    playlistResult = searchResults['playlists']['items'][0]['id']
+    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+    for x in range(0,len(playlist['items'])):
+        songs.append(playlist['items'][x]['track']['uri'])
+
     searchResults = spotifyObject.search('70s road trip', 1, 0, 'playlist')
 
     playlistResult = searchResults['playlists']['items'][0]['id']
@@ -229,7 +366,7 @@ def NinetiesPlaylist():
     songs = []
     randsongs = []
 
-    searchResults = spotifyObject.search('1990s love songs', 1, 0, 'playlist')
+    searchResults = spotifyObject.search('1990s music', 1, 0, 'playlist')
 
     playlistResult = searchResults['playlists']['items'][0]['id']
     playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
@@ -240,6 +377,26 @@ def NinetiesPlaylist():
         songs.append(playlist['items'][x]['track']['uri'])
 
     searchResults = spotifyObject.search('All out 90s', 1, 0, 'playlist')
+
+    playlistResult = searchResults['playlists']['items'][0]['id']
+    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+    for x in range(0,len(playlist['items'])):
+        songs.append(playlist['items'][x]['track']['uri'])
+
+    searchResults = spotifyObject.search('1990s R&B', 1, 0, 'playlist')
+
+    playlistResult = searchResults['playlists']['items'][0]['id']
+    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+    for x in range(0,len(playlist['items'])):
+        songs.append(playlist['items'][x]['track']['uri'])
+
+    searchResults = spotifyObject.search('1990s hip hop', 1, 0, 'playlist')
 
     playlistResult = searchResults['playlists']['items'][0]['id']
     playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
@@ -283,6 +440,26 @@ def millennialPlaylist():
     for x in range(0,len(playlist['items'])):
         songs.append(playlist['items'][x]['track']['uri'])
 
+    searchResults = spotifyObject.search('2000s RnB throwback', 1, 0, 'playlist')
+
+    playlistResult = searchResults['playlists']['items'][0]['id']
+    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+    for x in range(0,len(playlist['items'])):
+        songs.append(playlist['items'][x]['track']['uri'])
+
+    searchResults = spotifyObject.search('2000s alternative rock', 1, 0, 'playlist')
+
+    playlistResult = searchResults['playlists']['items'][0]['id']
+    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+    for x in range(0,len(playlist['items'])):
+        songs.append(playlist['items'][x]['track']['uri'])
+
     for x in range(0,29):
         randsongs.append(songs[random.randint(0,(len(songs) - 1))])
 
@@ -296,7 +473,5 @@ def returnPlaylists():
     for i in range(0,len(myPlaylists)):
         playlistList.append(myPlaylists[i]['name'])
     return playlistList
-
-
 
 #print(json.dumps(Variable, sort_keys=True, indent=4))
