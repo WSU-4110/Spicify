@@ -18,9 +18,11 @@ except:
 spotifyObject = spotipy.Spotify(auth=token)
 
 
+# user info
 user = spotifyObject.current_user()
-displayname = user['display_name']
-followers = user['followers']['total']
+displayname = user['display_name'] # name
+followers = user['followers']['total'] # followers
+profile_pic = user['images'][0]['url']  # profile pic
 
 
 # print("Welcome to Spicify " + displayname, "!")

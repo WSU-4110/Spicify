@@ -19,6 +19,7 @@ except:
 spotifyObject = spotipy.Spotify(auth=token)
 user = spotifyObject.current_user()
 
+playlist_name = 'Driving Playlist'  # for the post-creation page
 
 # Search query and results
 searchResults3 = spotifyObject.search('genre:deep+chill', 50, 0, 'track')
