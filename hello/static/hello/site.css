@@ -1,7 +1,3 @@
-/* main css */
-
-
-
 /* dashboard css */
 
 *, *::after, *::before {
@@ -11,7 +7,7 @@
 }
 
 body {
-    background-image: linear-gradient(90deg, #656565 , #000);
+    /* background-image: linear-gradient(90deg, #656565 , #000); */
     display: grid;
     grid-template:
     "nav categories" 50px
@@ -93,6 +89,10 @@ body {
    align-self: flex-start;
    margin: 5px 0 20px 0;
    width: 100%;
+}
+
+.logo a {
+   text-decoration: none;
    font-weight: 800;
    font-size: 25px;
    color: white;

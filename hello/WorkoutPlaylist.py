@@ -19,6 +19,7 @@ except:
 spotifyObject = spotipy.Spotify(auth=token)
 user = spotifyObject.current_user()
 
+playlist_name = 'Workout playlist'  # for the post-creation page
 
 # Search query and results
 searchResults = spotifyObject.search('genre:crunk+pop', 50, 0, 'track')
@@ -34,7 +35,6 @@ for x in tracks: #store searched songs in lists
     tracks_name.append(x['name'])
     if x['popularity'] <= 70:
         tracks_uri.append(x['uri'])
-
 
     
 # function to narrorw down search to match our workout sound attributes
