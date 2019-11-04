@@ -28,16 +28,34 @@ def layout(request):
 def workout(request):
     WorkoutPlaylist.workoutTracks_uri()
     WorkoutPlaylist.savePlaylist()
-    return render(request, 'hello/home.html')
+    return render(
+        request, 
+        'hello/playlist_view.html',
+        {
+            'name': WorkoutPlaylist.playlist_name
+        }
+    )
 
 def study(request):
     StudyPlaylist.studyPlaylist()
     StudyPlaylist.savePlaylist()
-    return render(request, 'hello/home.html')
+    return render(
+        request,
+        'hello/playlist_view.html',
+        {
+            'name': StudyPlaylist.playlist_name
+        }
+    )
 
 def driving(request):
     GeneralDrivingPlaylist.drivingTracks_uri()
     GeneralDrivingPlaylist.savePlaylist()
-    return render(request, 'hello/home.html')
+    return render(
+        request,
+        'hello/playlist_view.html',
+        {
+            'name': GeneralDrivingPlaylist.playlist_name
+        }
+    )
     
  

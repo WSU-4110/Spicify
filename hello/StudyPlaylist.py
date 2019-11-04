@@ -19,6 +19,8 @@ except:
 spotifyObject = spotipy.Spotify(auth=token)
 user = spotifyObject.current_user()
 
+playlist_name = 'Study Playlist'  # for the post-creation page
+
 # Search query and results
 searchResults2 = spotifyObject.search('genre:jazz+indie', 50, 0, 'track')
 tracks = searchResults2['tracks']['items']
