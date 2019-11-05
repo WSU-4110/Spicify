@@ -33,7 +33,8 @@ def workout(request):
         request, 
         'hello/playlist_view.html',
         {
-            'name': WorkoutPlaylist.playlist_name
+            'playlistName': WorkoutPlaylist.playlist_name,
+            'name': SpotipyFunctions.displayname
         }
     )
 
@@ -44,7 +45,8 @@ def study(request):
         request,
         'hello/playlist_view.html',
         {
-            'name': StudyPlaylist.playlist_name
+            'playlistName': StudyPlaylist.playlist_name,
+            'name': SpotipyFunctions.displayname
         }
     )
 
@@ -55,7 +57,8 @@ def driving(request):
         request,
         'hello/playlist_view.html',
         {
-            'name': GeneralDrivingPlaylist.playlist_name
+            'playlistName': GeneralDrivingPlaylist.playlist_name,
+            'name': SpotipyFunctions.displayname
         }
     )
     
@@ -65,12 +68,20 @@ def yearRange(request):
         request,
         'hello/yearRangeChoices.html',
         {
-            'name': YearRangePlaylist.playlist_name
+            'playlistName': YearRangePlaylist.playlist_name,
+            'name': SpotipyFunctions.displayname
         }
     )
 
 def thirties(request):
     YearRangePlaylist.thirtiesPlaylist()
+    return render(
+        request,
+        'hello/playlist_view.html'
+    )
+
+def fourties(request):
+    YearRangePlaylist.fourtiesPlaylist()
     return render(
         request,
         'hello/playlist_view.html'

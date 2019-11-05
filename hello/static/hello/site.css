@@ -9,7 +9,7 @@
 }
 
 body {
-    /* background-image: linear-gradient(90deg, #656565 , #000); */
+    background-image: linear-gradient(90deg, #656565 , #000);
     display: grid;
     grid-template:
     "nav categories" 50px
@@ -30,24 +30,26 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 100%;
+    min-width: 200px;
     align-self: flex-start;
-    /* border-radius: 10px; */
-    /* position: fixed; */
-    /* height: 100vh; */
+    height: 100%;
     cursor:pointer;
     border-right: 3px solid green;
 }
 
 @media (min-width: 1000px) {
     body {
-        overflow: hidden;
+/*         overflow: hidden; */
     }
     .dash-nav {
         height: 100vh;
+        position: fixed;
+      
     }
     .dash-nav ul {
         height: 100%;
+      width: 100%;
+      
     }
 
     .buts {
@@ -63,7 +65,6 @@ body {
 
 .dash-nav ul {
     background: #2b2929;
-    width: 100%;
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -71,7 +72,13 @@ body {
     align-self: flex-start;
     padding: 0 0 0 10px;
     color: white;
-    /* height: 100%; */
+}
+.dash-nav li {
+  padding-bottom: 10px;
+}
+
+.dash-nav li:nth-child(5) {
+  padding-top: 10px;
 }
 
 .dash-nav li a {
@@ -81,7 +88,7 @@ body {
 
 .dash-nav li a:hover {
     text-decoration: underline;
-    text-decoration-color: white;
+    text-decoration-color: #bbbbbb;
 }
 
 .dash-nav .logo {
@@ -218,59 +225,3 @@ footer {
     background-size: 100% 150%;
 }
 
-
- @media only screen and (max-width: 1000px) {
-    body {
-        grid-template:
-        "nav" 1fr
-        "categories" 4fr
-        "footer" 1fr / 1fr
-    }
-
-    .dash-nav {
-        grid-area: nav;
-        height: 50%;
-    }
-
-    .dash-nav ul {
-        height: 0%;
-    }
-
-    .dash-nav ul li {
-        display: none;
-        /* height: 0%; */
-    }
-
-    .cg {
-        grid-area: categories;
-        margin: 0 40px 0 20px;
-    }
-
-    .m {
-        margin-top: 20px;
-    }
-
-    footer {
-        grid-area: footer;
-    }
-
-    .buts {
-        display: grid;
-        grid-template-rows: repeat(6, 1fr);
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .btns {
-        /* margin: 0 25%; */
-        margin: 0 0 20px 0;
-        font-size: 150%;
-        height: 10em;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    footer {
-        display: flex;
-        justify-content: center;
-    }
-} 
