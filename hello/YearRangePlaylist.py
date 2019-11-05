@@ -30,6 +30,8 @@ displayname = user['display_name']
 followers = user['followers']['total']
 userId = user['id']
 
+playlist_name = 'Year Range'
+
 # def beginPlaylist():
 #     spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
 
