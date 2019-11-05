@@ -49,9 +49,9 @@ def drivingTracks_uri():
 
 
 def savePlaylist():
-    newPlaylist = spotifyObject.user_playlist_create(user['id'], 'Spicify General Driving 10/28/2019')
+    newPlaylist = spotifyObject.user_playlist_create(user['id'], 'Spicify General Driving')
     playlistId = newPlaylist['id'] #create id for new playlist
     spotifyObject.user_playlist_add_tracks(user['id'], playlistId, selectedDrivingTracks_uri, position=None)
 
-drivingTracks_uri()
-savePlaylist()
+# drivingTracks_uri()
+# savePlaylist()

@@ -38,7 +38,7 @@ body {
 
 @media (min-width: 1000px) {
     body {
-        overflow: hidden;
+        /* overflow: hidden; */
     }
     .dash-nav {
         height: 100vh;
@@ -203,6 +203,34 @@ footer {
 .e:hover {
     color: yellow;
     border-color: yellow;
+    box-shadow: 0 0 0 rgba(0,0,0,1);
+    text-shadow: 1px 1px 0px rgba(0,0,0,1);
+    /* text-decoration: none; */
+    text-decoration-color: red;
+}
+
+.f {
+    background: yellow;
+    background-size: 100% 150%;
+}
+
+.f:hover {
+    color: yellow;
+    border-color: yellow;
+    box-shadow: 0 0 0 rgba(0,0,0,1);
+    text-shadow: 1px 1px 0px rgba(0,0,0,1);
+    /* text-decoration: none; */
+    text-decoration-color: red;
+}
+
+.g {
+    background: yellow;
+    background-size: 100% 150%;
+}
+
+.g:hover {
+    color: plum;
+    border-color: plum;
     box-shadow: 0 0 0 rgba(0,0,0,1);
     text-shadow: 1px 1px 0px rgba(0,0,0,1);
     /* text-decoration: none; */
