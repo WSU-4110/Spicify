@@ -45,8 +45,7 @@ def studyPlaylist():
             elif 0.0 <= track_data['loudness'] <= 1.0:
                 selectedStudyTracks_uri.append(track_data['uri'])
     
-    for x in selectedStudyTracks_uri:
-        print(x)
+    
     return selectedStudyTracks_uri
 
    
@@ -55,5 +54,5 @@ def savePlaylist():
     playlistId = newPlaylist['id'] #create id for new playlist
     spotifyObject.user_playlist_add_tracks(user['id'], playlistId, selectedStudyTracks_uri, position=None)
 
-# studyPlaylist()
-# savePlaylist(spotifyObject, selectedStudyTracks_uri)
+#studyPlaylist()
+#savePlaylist(spotifyObject, selectedStudyTracks_uri)

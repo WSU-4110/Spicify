@@ -31,6 +31,9 @@ displayname = user['display_name']
 followers = user['followers']['total']
 userId = user['id']
 
+devices = spotifyObject.devices()
+deviceID = devices['devices'][0]['id']
+
 # def beginPlaylist():
 #     spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
 
@@ -109,5 +112,9 @@ def internationalPlaylist():
 
     spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)  #Fill playlist with songs from randsongs list
 
-# internationalPlaylist()  - Testing purposes
+    Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
+    
+    spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
+
+#internationalPlaylist()
 

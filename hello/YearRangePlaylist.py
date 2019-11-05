@@ -24,13 +24,17 @@ except:
 
 spotifyObject = spotipy.Spotify(auth=token)
 
+playlist_name = 'Year Range'
+
 
 user = spotifyObject.current_user()
 displayname = user['display_name']
 followers = user['followers']['total']
 userId = user['id']
 
-playlist_name = 'Year Range'
+devices = spotifyObject.devices()
+deviceID = devices['devices'][0]['id']
+Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
 
 # def beginPlaylist():
 #     spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
@@ -90,7 +94,11 @@ def thirtiesPlaylist():
 
 
     spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)  #Fill playlist with songs from randsongs list
-    spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)
+
+    Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
+    
+    spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
+    
 
 def fourtiesPlaylist():
 
@@ -128,6 +136,11 @@ def fourtiesPlaylist():
     print(randsongs)
 
     spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)
+
+    Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
+    
+    spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
+    
 
 def fiftiesPlaylist():
 
@@ -182,6 +195,11 @@ def fiftiesPlaylist():
         randsongs.append(songs[random.randint(0,(len(songs) - 1))])
 
     spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)
+
+    Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
+    
+    spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
+    
 
 def sixtiesPlaylist():
 
@@ -238,6 +256,12 @@ def sixtiesPlaylist():
         randsongs.append(songs[random.randint(0,(len(songs) - 1))])
 
     spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)
+
+    Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
+    
+    spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
+
+   
 
 def eightiesPlaylist():
 
@@ -305,6 +329,11 @@ def eightiesPlaylist():
 
     spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)
 
+    Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
+    
+    spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
+    
+
 def SeventiesPlaylist():
 
     spotifyObject.user_playlist_create(user['id'], '1970s Playlist')
@@ -359,6 +388,11 @@ def SeventiesPlaylist():
 
     spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)
 
+    Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
+    
+    spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
+    
+
 def NinetiesPlaylist():
 
     spotifyObject.user_playlist_create(user['id'], '1990s Playlist')
@@ -368,15 +402,6 @@ def NinetiesPlaylist():
     songs = []
     randsongs = []
 
-    searchResults = spotifyObject.search('1990s music', 1, 0, 'playlist')
-
-    playlistResult = searchResults['playlists']['items'][0]['id']
-    playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
-
-    playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
-
-    for x in range(0,len(playlist['items'])):
-        songs.append(playlist['items'][x]['track']['uri'])
 
     searchResults = spotifyObject.search('All out 90s', 1, 0, 'playlist')
 
@@ -412,6 +437,11 @@ def NinetiesPlaylist():
         randsongs.append(songs[random.randint(0,(len(songs) - 1))])
 
     spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)
+
+    Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
+    
+    spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
+    
 
 def millennialPlaylist():
 
@@ -467,6 +497,11 @@ def millennialPlaylist():
 
     spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)
 
+    Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
+    
+    spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
+    
+
 def returnPlaylists():
     myPlaylists = spotifyObject.current_user_playlists()['items']
 
@@ -475,5 +510,6 @@ def returnPlaylists():
     for i in range(0,len(myPlaylists)):
         playlistList.append(myPlaylists[i]['name'])
     return playlistList
+
 
 #print(json.dumps(Variable, sort_keys=True, indent=4))
