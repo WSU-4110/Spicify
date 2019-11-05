@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from hello import YearRangePlaylist
 from hello import SpotipyFunctions
 from hello import WorkoutPlaylist
 from hello import StudyPlaylist
@@ -58,4 +59,19 @@ def driving(request):
         }
     )
     
- 
+
+def yearRange(request):
+    return render(
+        request,
+        'hello/yearRangeChoices.html',
+        {
+            'name': YearRangePlaylist.playlist_name
+        }
+    )
+
+def thirties(request):
+    YearRangePlaylist.thirtiesPlaylist()
+    return render(
+        request,
+        'hello/playlist_view.html'
+    )

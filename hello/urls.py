@@ -7,5 +7,7 @@ urlpatterns = [
     path("category", views.category, name="category"),
     path("workout", views.workout, name="workout"),
     path("study", views.study, name="study" ),
-    path("driving", views.driving, name="driving")
+    path("driving", views.driving, name="driving"),
+    path("yearRange", views.yearRange, name="yearRange"),
+    path("thirty", views.thirties, name="thirty")     
 ]
