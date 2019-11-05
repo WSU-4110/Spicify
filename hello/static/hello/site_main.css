@@ -67,9 +67,9 @@ ul li a {
   grid-column: 2/4;
 }
 
-#s {
+/* #s {
   
-}
+} */
 
 .main {
   grid-area: main;
