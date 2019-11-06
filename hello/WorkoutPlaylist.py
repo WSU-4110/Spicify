@@ -49,8 +49,7 @@ def workoutTracks_uri():
             elif 0.5 <= track_data['valence'] <= 1.0:
                 selectedWorkoutTracks_uri.append(track_data['uri'])
     
-    for x in selectedWorkoutTracks_uri:
-        print(x)
+    
     return selectedWorkoutTracks_uri
 
 
@@ -59,8 +58,8 @@ def savePlaylist():
     playlistId = newPlaylist['id'] #create id for new playlist
     spotifyObject.user_playlist_add_tracks(user['id'], playlistId, selectedWorkoutTracks_uri, position=None)
 
-# workoutTracks_uri()
-# savePlaylist()
+#workoutTracks_uri()
+#savePlaylist()
 
 
 
