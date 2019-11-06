@@ -31,8 +31,8 @@ displayname = user['display_name']
 followers = user['followers']['total']
 userId = user['id']
 
-devices = spotifyObject.devices()
-deviceID = devices['devices'][0]['id']
+# devices = spotifyObject.devices()
+# deviceID = devices['devices'][0]['id']
 
 # def beginPlaylist():
 #     spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
