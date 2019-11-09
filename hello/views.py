@@ -2,10 +2,10 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from hello import YearRangePlaylist
 from hello import SpotipyFunctions
-from hello import WorkoutPlaylist
-from hello import StudyPlaylist
+from hello.WorkoutPlaylist import workoutPlaylistClass
 from hello import GeneralDrivingPlaylist
 from hello import InternationalPlaylist
+from hello.StudyPlaylist import studyPlaylistClass
 import requests
 
 def home(request):
@@ -28,24 +28,30 @@ def layout(request):
     return render(request, 'hello/layout.html')
 
 def workout(request):
-    WorkoutPlaylist.workoutTracks_uri()
-    WorkoutPlaylist.savePlaylist()
-    return render(
-        request, 
-        'hello/playlist_view.html',
-        {
-            'name': WorkoutPlaylist.playlist_name
-        }
-    )
-
-def study(request):
-    StudyPlaylist.studyPlaylist()
-    StudyPlaylist.savePlaylist()
+    workoutObject = workoutPlaylistClass()
+    workoutObject.workoutTracks_uri()
+    passId = workoutObject.savePlaylist()
+    url = workoutObject.showPlaylist(passId)
     return render(
         request,
         'hello/playlist_view.html',
         {
-            'name': StudyPlaylist.playlist_name
+            'name': 'Spicify Workout',
+            'playlistUrl': url
+        }
+    )
+
+def study(request):
+    studyObject = studyPlaylistClass()
+    studyObject.studyPlaylist()
+    passId = studyObject.savePlaylist()
+    url = studyObject.showPlaylist(passId)
+    return render(
+        request,
+        'hello/playlist_view.html',
+        {
+            'name': 'Spicify Study',
+            'playlistUrl': url
         }
     )
 
