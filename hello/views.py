@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from hello import YearRangePlaylist
 from hello import SpotipyFunctions
-from hello.WorkoutPlaylist import workoutPlaylistClass
+from hello.WorkoutPlaylist import *
 from hello import GeneralDrivingPlaylist
 from hello import InternationalPlaylist
 from hello.StudyPlaylist import studyPlaylistClass
@@ -28,16 +28,17 @@ def layout(request):
     return render(request, 'hello/layout.html')
 
 def workout(request):
-    workoutObject = workoutPlaylistClass()
-    workoutObject.workoutTracks_uri()
-    passId = workoutObject.savePlaylist()
-    url = workoutObject.showPlaylist(passId)
+    FactoryObj = PlaylistFactory()
+    playlist1 = FactoryObj.CreatePlaylist("workout")
+    playlist1.generateURIs()
+    playlistId = playlist1.savePlaylist()
+    playlistUrl = playlist1.showPlaylist(playlistId)
     return render(
         request,
         'hello/playlist_view.html',
         {
             'name': 'Spicify Workout',
-            'playlistUrl': url
+            'playlistUrl': playlistUrl
         }
     )
 

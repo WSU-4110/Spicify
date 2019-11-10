@@ -70,12 +70,26 @@ for x in tracks:
 #     print(x['name'])
 #     print(x['popularity'])
 # print(tracks)
+
+# abstract class 
+class Playlist():
+    # @abc.abstractclassmethod
+    def generateURIs():
+        pass
+    
+    # @abc.abstractclassmethod
+    def savePlaylist():
+        pass
+
+    # @abc.abstractclassmethod
+    def showPlaylist():
+        pass
  
 
-class workoutPlaylistClass:
+class workoutPlaylistClass(Playlist):
     
     # function to narrorw down search to match our workout sound attributes
-    def workoutTracks_uri(self):
+    def generateURIs(self):
         for tracks in tracks_uri: #look through searched tracks uri
             selected_tracks_data = spotifyObject.audio_features(tracks) #get audio features of searched track
             for track_data in selected_tracks_data:
@@ -104,5 +118,16 @@ class workoutPlaylistClass:
     def showPlaylist(self, passedId):
         playlistUrl = 'https://open.spotify.com/embed/playlist/%s' % (passedId)
         return playlistUrl
+
+
+class PlaylistFactory(Playlist):
+
+    def CreatePlaylist(self, playListType):
+        playListToCreate = None
+        if(playListType == "workout"):
+            playListToCreate = workoutPlaylistClass()
+        return playListToCreate
+
+
         
 
