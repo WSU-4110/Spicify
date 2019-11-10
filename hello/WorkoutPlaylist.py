@@ -4,6 +4,7 @@ import spotipy.util as util
 from json.decoder import JSONDecodeError
 import json
 import random
+from abc import ABC, abstractmethod
 
 username = "22kpgi2vtrlebcei6eu37db7y"
 scope = 'playlist-read-collaborative playlist-modify-private playlist-modify-public playlist-read-private user-modify-playback-state user-read-currently-playing user-read-playback-state user-read-private user-read-email user-library-modify user-library-read user-follow-modify user-follow-read user-read-recently-played user-top-read streaming app-remote-control'
@@ -72,16 +73,14 @@ for x in tracks:
 # print(tracks)
 
 # abstract class 
-class Playlist():
-    # @abc.abstractclassmethod
+class Playlist(ABC):
+  
     def generateURIs():
         pass
-    
-    # @abc.abstractclassmethod
+
     def savePlaylist():
         pass
 
-    # @abc.abstractclassmethod
     def showPlaylist():
         pass
  
@@ -100,8 +99,6 @@ class workoutPlaylistClass(Playlist):
                 elif 0.7 <= track_data['valence'] <= 1.0:
                     selectedWorkoutTracks_uri.append(track_data['uri'])
 
-
-        return selectedWorkoutTracks_uri
 
 
     def savePlaylist(self):
