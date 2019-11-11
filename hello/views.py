@@ -1,10 +1,11 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from hello import YearRangePlaylist
+from hello.YearRangePlaylist import yearRangePlaylistClass
 from hello import SpotipyFunctions
 from hello.WorkoutPlaylist import workoutPlaylistClass
-from hello import GeneralDrivingPlaylist
-from hello import InternationalPlaylist
+from hello.GeneralDrivingPlaylist import drivingPlaylistClass
+from hello.InternationalPlaylist import internationalPlaylistClass
 from hello.StudyPlaylist import studyPlaylistClass
 import requests
 
@@ -36,33 +37,33 @@ def workout(request):
         request,
         'hello/playlist_view.html',
         {
-            'name': 'Spicify Workout',
             'playlistUrl': url
         }
     )
 
 def study(request):
     studyObject = studyPlaylistClass()
-    studyObject.studyPlaylist()
+    studyObject.studyTracks_uri()
     passId = studyObject.savePlaylist()
     url = studyObject.showPlaylist(passId)
     return render(
         request,
         'hello/playlist_view.html',
         {
-            'name': 'Spicify Study',
             'playlistUrl': url
         }
     )
 
 def driving(request):
-    GeneralDrivingPlaylist.drivingTracks_uri()
-    GeneralDrivingPlaylist.savePlaylist()
+    drivingObject = drivingPlaylistClass()
+    drivingObject.drivingTracks_uri()
+    passId = drivingObject.savePlaylist()
+    url = drivingObject.showPlaylist(passId)
     return render(
         request,
         'hello/playlist_view.html',
         {
-            'name': GeneralDrivingPlaylist.playlist_name
+            'playlistUrl': url
         }
     )
     
@@ -77,65 +78,109 @@ def yearRange(request):
     )
 
 def thirties(request):
-    YearRangePlaylist.thirtiesPlaylist()
+    yearObject = yearRangePlaylistClass()
+    passId = yearObject.thirtiesPlaylist()
+    url = yearObject.showPlaylist(passId)
     return render(
         request,
-        'hello/playlist_view.html'
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
     )
 
 def fourties(request):
-    YearRangePlaylist.fourtiesPlaylist()
+    yearObject = yearRangePlaylistClass()
+    passId = yearObject.fourtiesPlaylist()
+    url = yearObject.showPlaylist(passId)
     return render(
         request,
-        'hello/playlist_view.html'
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
     )
 
 def fifties(request):
-    YearRangePlaylist.fiftiesPlaylist()
+    yearObject = yearRangePlaylistClass()
+    passId = yearObject.fiftiesPlaylist()
+    url = yearObject.showPlaylist(passId)
     return render(
         request,
-        'hello/playlist_view.html'
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
     )
 
 def sixties(request):
-    YearRangePlaylist.sixtiesPlaylist()
+    yearObject = yearRangePlaylistClass()
+    passId = yearObject.sixtiesPlaylist()
+    url = yearObject.showPlaylist(passId)
     return render(
         request,
-        'hello/playlist_view.html'
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
     )
 
 def seventies(request):
-    YearRangePlaylist.SeventiesPlaylist()
+    yearObject = yearRangePlaylistClass()
+    passId = yearObject.SeventiesPlaylist()
+    url = yearObject.showPlaylist(passId)
     return render(
         request,
-        'hello/playlist_view.html'
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
     )
 
 def eighties(request):
-    YearRangePlaylist.eightiesPlaylist()
+    yearObject = yearRangePlaylistClass()
+    passId = yearObject.eightiesPlaylist()
+    url = yearObject.showPlaylist(passId)
     return render(
         request,
-        'hello/playlist_view.html'
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
     )
 
 def nineties(request):
-    YearRangePlaylist.NinetiesPlaylist()
-    
+    yearObject = yearRangePlaylistClass()
+    passId = yearObject.NinetiesPlaylist()
+    url = yearObject.showPlaylist(passId)
     return render(
         request,
-        'hello/playlist_view.html'
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
     )
 
 def millenial(request):
-    YearRangePlaylist.millennialPlaylist()
+    yearObject = yearRangePlaylistClass()
+    passId = yearObject.millennialPlaylist()
+    url = yearObject.showPlaylist(passId)
     return render(
         request,
-        'hello/playlist_view.html'
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
     )
 
 def international(request):
-    InternationalPlaylist.internationalPlaylist()
+    intObject = internationalPlaylistClass()
+    passId = intObject.internationalPlaylist()
+    url = intObject.showPlaylist(passId)
     return render(
         request,
-        'hello/playlist_view.html'
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
     )

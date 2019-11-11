@@ -57,7 +57,7 @@ for x in tracks: #store searched songs in lists
 class studyPlaylistClass():
 
 
-    def studyPlaylist(self):
+    def studyTracks_uri(self):
         for tracks in tracks_uri: #look through searched tracks uri
             selected_tracks_data = spotifyObject.audio_features(tracks) #get audio features of searched track
             for track_data in selected_tracks_data:
@@ -81,7 +81,6 @@ class studyPlaylistClass():
         
         newPlaylist = spotifyObject.user_playlist_create(user['id'], 'Spicify Study')
         playlistId = newPlaylist['id'] #create id for new playlist
-        # print(playlistUrl)
         spotifyObject.user_playlist_add_tracks(user['id'], playlistId, randsongs, position=None)
         
         return playlistId
