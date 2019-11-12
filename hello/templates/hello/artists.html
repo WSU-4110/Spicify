@@ -18,7 +18,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" href="{% static 'hello/site.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'hello/yearRange.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'hello/artists.css' %}" type="text/css">
 </head>
 
 <body>
@@ -29,7 +29,6 @@
         <div class="logo"><a href="{% url 'category' %}">Spicify</a></div>
         <li> <a class="navButton" href="{% url 'category' %}"> Home </a> </li>
         <!-- <li><a class="navbar-brand" href="{% url 'category' %}">Categories</a></li>  -->
-        <li class="message"> {{name}} </li>
         <hr>
         <li>Playlists</li>
         <!-- <ul class="playlists">
@@ -39,42 +38,46 @@
 </nav>
 
 <div class="cg">
-    <p class="m">Choose the catgeory of the Playlist you wish to create</p>
+    <p class="m">Select the artist for your related artists playlist!</p>
     <div class="buts">
-        <!-- button to select workout playlist -->
-        <a href="{% url 'thirty' %}">
-            <button type="button" class="z btns">1930's</button>
+        <!-- button to artist -->
+        <a href="{% url 'uncleposty' %}">
+            <button type="button" class="up btns">Uncle Posty</button>
         </a>
 
-        <!-- button to select general driving playlist -->
-        <a href="{% url 'fourty' %}">
-            <button type="button" class="y btns">1940's</button>
+        <!-- button to artist -->
+        <a href="{% url 'selenagomez' %}">
+            <button type="button" class="sg btns">Selena Gomez</button>
         </a>
 
-        <!-- button to select international playlist -->
-        <a href="{% url 'fifty' %}">
-            <button type="button" class="x btns">1950's</button>
+        <!-- button to artist -->
+        <a href="{% url 'rezz' %}">
+            <button type="button" class="rz btns">Rezz</button>
         </a>
 
-        <!-- button to select year range playlist -->
-        <a href="{% url 'sixty' %}">
-            <button type="button" class="w btns">1960's</button>
+        <!-- button to artist -->
+        <a href="{% url 'atribecalledquest' %}">
+            <button type="button" class="at btns">A Tribe Called Quest</button>
         </a>
 
-        <!-- button to select study playlist -->
-        <a href="{% url 'seventy' %}">
-            <button type="button" class="v btns">1970's</button>
+        <!-- button to artist -->
+        <a href="{% url 'travisscott' %}">
+            <button type="button" class="ts btns">Travis Scott</button>
         </a>
 
-        <!-- button to select artist's followers playlist -->
-        <a href="{% url 'eighty' %}">
-            <button type="button" class="u btns">1980's</button>
+        <!-- button to artist -->
+        <a href="{% url 'timmcgraw' %}">
+            <button type="button" class="tm btns">Tim McGraw</button>
         </a>
-        <a href="{% url 'ninety' %}">
-            <button type="button" class="t btns">1990's</button>
+
+        <!-- button to artist -->
+        <a href="{% url 'nancyajram' %}">
+            <button type="button" class="na btns">Nancy Ajram</button>
         </a>
-        <a href="{% url 'millenial' %}">
-            <button type="button" class="s btns">Millenials</button>
+
+        <!-- button to artist -->
+        <a href="{% url 'prince' %}">
+            <button type="button" class="pr btns">Prince</button>
         </a>
     </div>
 </div>
