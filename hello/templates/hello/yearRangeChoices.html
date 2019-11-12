@@ -5,14 +5,6 @@
     <meta charset="utf-8" />
     <title>Spicify</title>
 
-    <!-- deletes cache (for dev purposes) -->
-
-    <meta http-equiv="cache-control" content="max-age=0" />
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="expires" content="0" />
-    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-    <meta http-equiv="pragma" content="no-cache" />
-
     <!-- Link to bootstrap css library -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -37,14 +29,14 @@
                     </ul> -->
     </ul>
 </nav>
-
 <div class="cg">
-    <p class="m">Choose the catgeory of the Playlist you wish to create</p>
+    <p class="m">Please choose the year you want to listen to: </p>
     <div class="buts">
         <!-- button to select workout playlist -->
         <a href="{% url 'thirty' %}">
             <button type="button" class="z btns">1930's</button>
         </a>
+
 
         <!-- button to select general driving playlist -->
         <a href="{% url 'fourty' %}">
@@ -52,28 +44,29 @@
         </a>
 
         <!-- button to select international playlist -->
-        <a href="{% url 'fifty' %}">
+        <a href="#">
             <button type="button" class="x btns">1950's</button>
         </a>
 
+
         <!-- button to select year range playlist -->
-        <a href="{% url 'sixty' %}">
+        <a href="#">
             <button type="button" class="w btns">1960's</button>
         </a>
 
         <!-- button to select study playlist -->
-        <a href="{% url 'seventy' %}">
+        <a href="#">
             <button type="button" class="v btns">1970's</button>
         </a>
 
         <!-- button to select artist's followers playlist -->
-        <a href="{% url 'eighty' %}">
+        <a href="#">
             <button type="button" class="u btns">1980's</button>
         </a>
-        <a href="{% url 'ninety' %}">
+        <a href="#">
             <button type="button" class="t btns">1990's</button>
         </a>
-        <a href="{% url 'millenial' %}">
+        <a href="#">
             <button type="button" class="s btns">Millenials</button>
         </a>
     </div>
