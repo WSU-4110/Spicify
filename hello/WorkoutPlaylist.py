@@ -72,37 +72,37 @@ for x in tracks:
 # print(tracks)
  
 
-
+class workoutPlaylistClass:
     
-# function to narrorw down search to match our workout sound attributes
-def workoutTracks_uri():
-    for tracks in tracks_uri: #look through searched tracks uri
-        selected_tracks_data = spotifyObject.audio_features(tracks) #get audio features of searched track
-        for track_data in selected_tracks_data:
-            if 0.7 <= track_data['energy'] <= 1.0:
-                selectedWorkoutTracks_uri.append(track_data['uri'])
-            elif 50 <= track_data['tempo'] <= 200:
-                selectedWorkoutTracks_uri.append(track_data['uri'])
-            elif 0.7 <= track_data['valence'] <= 1.0:
-                selectedWorkoutTracks_uri.append(track_data['uri'])
-    
-    
-    return selectedWorkoutTracks_uri
+    # function to narrorw down search to match our workout sound attributes
+    def workoutTracks_uri(self):
+        for tracks in tracks_uri: #look through searched tracks uri
+            selected_tracks_data = spotifyObject.audio_features(tracks) #get audio features of searched track
+            for track_data in selected_tracks_data:
+                if 0.7 <= track_data['energy'] <= 1.0:
+                    selectedWorkoutTracks_uri.append(track_data['uri'])
+                elif 50 <= track_data['tempo'] <= 200:
+                    selectedWorkoutTracks_uri.append(track_data['uri'])
+                elif 0.7 <= track_data['valence'] <= 1.0:
+                    selectedWorkoutTracks_uri.append(track_data['uri'])
 
 
-def savePlaylist():
-
-    for x in range(0,30):
-        randsongs.append(selectedWorkoutTracks_uri[random.randint(0,(len(selectedWorkoutTracks_uri) - 1))])     #Fill randsongs list with  30 randomly selected songs from playlist list
-    
-    newPlaylist = spotifyObject.user_playlist_create(user['id'], 'Spicify Workout')
-    playlistId = newPlaylist['id'] #create id for new playlist
-    spotifyObject.user_playlist_add_tracks(user['id'], playlistId, randsongs, position=None)
-
-# workoutTracks_uri()
-# savePlaylist()
+        return selectedWorkoutTracks_uri
 
 
+    def savePlaylist(self):
 
+        for x in range(0,30):
+            randsongs.append(selectedWorkoutTracks_uri[random.randint(0,(len(selectedWorkoutTracks_uri) - 1))])     #Fill randsongs list with  30 randomly selected songs from playlist list
+        
+        newPlaylist = spotifyObject.user_playlist_create(user['id'], 'Spicify Workout')
+        playlistId = newPlaylist['id'] #create id for new playlist
+        spotifyObject.user_playlist_add_tracks(user['id'], playlistId, randsongs, position=None)
 
+        return playlistId
+
+    def showPlaylist(self, passedId):
+        playlistUrl = 'https://open.spotify.com/embed/playlist/%s' % (passedId)
+        return playlistUrl
+        
 
