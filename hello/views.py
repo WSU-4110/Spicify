@@ -189,7 +189,10 @@ def international(request):
 def artists(request):
     return render(
         request,
-        'hello/artists.html'
+        'hello/artists.html',
+        {
+            'name': SpotipyFunctions.displayname,
+        }
     )
 
 def uncleposty(request):
