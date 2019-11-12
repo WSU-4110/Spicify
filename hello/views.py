@@ -7,6 +7,7 @@ from hello.WorkoutPlaylist import workoutPlaylistClass
 from hello.GeneralDrivingPlaylist import drivingPlaylistClass
 from hello.InternationalPlaylist import internationalPlaylistClass
 from hello.StudyPlaylist import studyPlaylistClass
+from hello.RelatedArtistsPlaylist import relatedArtistsPlaylistClass
 import requests
 
 def home(request):
@@ -184,3 +185,67 @@ def international(request):
             'playlistUrl': url
         }
     )
+
+def artists(request):
+    return render(
+        request,
+        'hello/artists.html'
+    )
+
+def uncleposty(request):
+    raObj = relatedArtistsPlaylistClass()
+    raObj.unclepostyPlaylist()
+    return render(
+        request,
+        'hello/playlist_view.html'
+    )   
+
+def selenagomez(request):
+    return render(
+        request,
+        'hello/playlist_view.html'
+    )   
+
+def rezz(request):
+    return render(
+        request,
+        'hello/playlist_view.html'
+    )   
+
+def atribecalledquest(request):
+    return render(
+        request,
+        'hello/playlist_view.html'
+    )   
+
+def travisscott(request):
+    return render(
+        request,
+        'hello/playlist_view.html'
+    )   
+
+def timmcgraw(request):
+    return render(
+        request,
+        'hello/playlist_view.html'
+    )   
+
+def nancyajram(request):
+    return render(
+        request,
+        'hello/playlist_view.html'
+    )   
+
+def prince(request):
+    return render(
+        request,
+        'hello/playlist_view.html'
+    )   
+
+
+
+
+
+
+
+
