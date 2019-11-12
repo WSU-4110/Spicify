@@ -67,14 +67,15 @@ def driving(request):
             'playlistUrl': url
         }
     )
-    
+
 
 def yearRange(request):
     return render(
         request,
         'hello/yearRangeChoices.html',
         {
-            'name': YearRangePlaylist.playlist_name
+            'playlistName': YearRangePlaylist.playlist_name,
+            'name': SpotipyFunctions.displayname
         }
     )
 
@@ -198,54 +199,46 @@ def uncleposty(request):
     return render(
         request,
         'hello/playlist_view.html'
-    )   
+    )
 
 def selenagomez(request):
     return render(
         request,
         'hello/playlist_view.html'
-    )   
+    )
 
 def rezz(request):
     return render(
         request,
         'hello/playlist_view.html'
-    )   
+    )
 
 def atribecalledquest(request):
     return render(
         request,
         'hello/playlist_view.html'
-    )   
+    )
 
 def travisscott(request):
     return render(
         request,
         'hello/playlist_view.html'
-    )   
+    )
 
 def timmcgraw(request):
     return render(
         request,
         'hello/playlist_view.html'
-    )   
+    )
 
 def nancyajram(request):
     return render(
         request,
         'hello/playlist_view.html'
-    )   
+    )
 
 def prince(request):
     return render(
         request,
         'hello/playlist_view.html'
-    )   
-
-
-
-
-
-
-
-
+    )
