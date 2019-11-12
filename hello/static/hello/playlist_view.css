@@ -54,14 +54,17 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 40px;
+/*   margin-left: 20px; */
+  border-left: 1px solid black;
+  padding-left: 30px;
 }
 
 .info {
   grid-area: rating;
   display: flex;
 /*   grid-template-rows: . 1fr 1fr; */
-  height: 100%;
-  border-right: 1px solid black;
+/*   height: 100%; */
+/*   border-right: 1px solid black; */
 }
 
 .rating {
