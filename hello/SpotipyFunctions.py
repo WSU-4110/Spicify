@@ -25,6 +25,19 @@ followers = user['followers']['total'] # followers
 # profile_pic = user['images'][0]['url']  # profile pic
 
 
-# print("Welcome to Spicify " + displayname, "!")
-# print("You have " + str(followers) + " followers.")
+myPlaylists = spotifyObject.current_user_playlists()['items']
+
+playlistList = []
+
+for i in range(0,len(myPlaylists)):
+    playlistList.append(myPlaylists[i]['name'])
+    #print(str(myPlaylists[i]['name']))
+
+playlistList
+
+print(playlistList)
+
+
+
+        
 
