@@ -18,8 +18,8 @@
 <nav class="dash-nav">
     <ul>
         <!--  href="{% url 'home' %}" -->
-        <div class="logo"><a href="{% url 'home' %}">Spicify</a></div>
-        <li> <a class="navButton" href="{% url 'category' %}"> Dashboard </a> </li>
+        <div class="logo"><a href="{% url 'category' %}">Spicify</a></div>
+        <li> <a class="navButton" href="{% url 'category' %}"> Home </a> </li>
         <!-- <li><a class="navbar-brand" href="{% url 'category' %}">Categories</a></li>  -->
         <li class="message"> {{name}} </li>
         <hr>
@@ -44,28 +44,28 @@
         </a>
 
         <!-- button to select international playlist -->
-        <a href="#">
+        <a href="{% url 'fifty' %}">
             <button type="button" class="x btns">1950's</button>
         </a>
 
         <!-- button to select year range playlist -->
-        <a href="#">
+        <a href="{% url 'sixty' %}">
             <button type="button" class="w btns">1960's</button>
         </a>
 
         <!-- button to select study playlist -->
-        <a href="#">
+        <a href="{% url 'seventy' %}">
             <button type="button" class="v btns">1970's</button>
         </a>
 
         <!-- button to select artist's followers playlist -->
-        <a href="#">
+        <a href="{% url 'eighty' %}">
             <button type="button" class="u btns">1980's</button>
         </a>
-        <a href="#">
+        <a href="{% url 'ninety' %}">
             <button type="button" class="t btns">1990's</button>
         </a>
-        <a href="#">
+        <a href="{% url 'millenial' %}">
             <button type="button" class="s btns">Millenials</button>
         </a>
     </div>

@@ -18,10 +18,10 @@
     <nav class="dash-nav">
         <ul>
             <!--  href="{% url 'home' %}" -->
-            <div class="logo"><a href="{% url 'home' %}">Spicify</a></div>
-            <li> <a class="navButton" href="{% url 'category' %}"> Dashboard </a> </li>
+            <div class="logo"><a href="{% url 'category' %}">Spicify</a></div>
+            <li> <a class="navButton" href="{% url 'category' %}"> Home </a> </li>
             <!-- <li><a class="navbar-brand" href="{% url 'category' %}">Categories</a></li>  -->
-            <li class="message"> {{name}} </li>
+
             <hr>
             <li>Playlists</li>
             <!-- <ul class="playlists">
@@ -29,24 +29,8 @@
                         </ul> -->
         </ul>
     </nav>
-
-    <div class="playlistView">
-        <h2 class="playlist_name">Your {{playlistName}} Has Been Created!</h2>
-        <!--   <h4 class="exit">X</h4> -->
-        <div class="info">
-            <div class="rating">
-                <h4>Star Rating:</h4>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
+        <div>
+            <iframe src="{{playlistUrl}}" width="450" height="480" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
-        <div class="playlist-fillin">
-            Now you can go to Spotify and it'll be the first playlist in your library
-        </div>
-    </div>
 </body>
-
 </html>

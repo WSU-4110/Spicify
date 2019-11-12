@@ -1,10 +1,13 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from hello import YearRangePlaylist
+from hello.YearRangePlaylist import yearRangePlaylistClass
 from hello import SpotipyFunctions
-from hello import WorkoutPlaylist
-from hello import StudyPlaylist
-from hello import GeneralDrivingPlaylist
+from hello.WorkoutPlaylist import workoutPlaylistClass
+from hello.GeneralDrivingPlaylist import drivingPlaylistClass
+from hello.InternationalPlaylist import internationalPlaylistClass
+from hello.StudyPlaylist import studyPlaylistClass
+from hello.RelatedArtistsPlaylist import relatedArtistsPlaylistClass
 import requests
 
 def home(request):
@@ -27,41 +30,44 @@ def layout(request):
     return render(request, 'hello/layout.html')
 
 def workout(request):
-    WorkoutPlaylist.workoutTracks_uri()
-    WorkoutPlaylist.savePlaylist()
+    workoutObject = workoutPlaylistClass()
+    workoutObject.workoutTracks_uri()
+    passId = workoutObject.savePlaylist()
+    url = workoutObject.showPlaylist(passId)
     return render(
-        request, 
+        request,
         'hello/playlist_view.html',
         {
-            'playlistName': WorkoutPlaylist.playlist_name,
-            'name': SpotipyFunctions.displayname
+            'playlistUrl': url
         }
     )
 
 def study(request):
-    StudyPlaylist.studyPlaylist()
-    StudyPlaylist.savePlaylist()
+    studyObject = studyPlaylistClass()
+    studyObject.studyTracks_uri()
+    passId = studyObject.savePlaylist()
+    url = studyObject.showPlaylist(passId)
     return render(
         request,
         'hello/playlist_view.html',
         {
-            'playlistName': StudyPlaylist.playlist_name,
-            'name': SpotipyFunctions.displayname
+            'playlistUrl': url
         }
     )
 
 def driving(request):
-    GeneralDrivingPlaylist.drivingTracks_uri()
-    GeneralDrivingPlaylist.savePlaylist()
+    drivingObject = drivingPlaylistClass()
+    drivingObject.drivingTracks_uri()
+    passId = drivingObject.savePlaylist()
+    url = drivingObject.showPlaylist(passId)
     return render(
         request,
         'hello/playlist_view.html',
         {
-            'playlistName': GeneralDrivingPlaylist.playlist_name,
-            'name': SpotipyFunctions.displayname
+            'playlistUrl': url
         }
     )
-    
+
 
 def yearRange(request):
     return render(
@@ -74,14 +80,164 @@ def yearRange(request):
     )
 
 def thirties(request):
-    YearRangePlaylist.thirtiesPlaylist()
+    yearObject = yearRangePlaylistClass()
+    passId = yearObject.thirtiesPlaylist()
+    url = yearObject.showPlaylist(passId)
+    return render(
+        request,
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
+    )
+
+def fourties(request):
+    yearObject = yearRangePlaylistClass()
+    passId = yearObject.fourtiesPlaylist()
+    url = yearObject.showPlaylist(passId)
+    return render(
+        request,
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
+    )
+
+def fifties(request):
+    yearObject = yearRangePlaylistClass()
+    passId = yearObject.fiftiesPlaylist()
+    url = yearObject.showPlaylist(passId)
+    return render(
+        request,
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
+    )
+
+def sixties(request):
+    yearObject = yearRangePlaylistClass()
+    passId = yearObject.sixtiesPlaylist()
+    url = yearObject.showPlaylist(passId)
+    return render(
+        request,
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
+    )
+
+def seventies(request):
+    yearObject = yearRangePlaylistClass()
+    passId = yearObject.SeventiesPlaylist()
+    url = yearObject.showPlaylist(passId)
+    return render(
+        request,
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
+    )
+
+def eighties(request):
+    yearObject = yearRangePlaylistClass()
+    passId = yearObject.eightiesPlaylist()
+    url = yearObject.showPlaylist(passId)
+    return render(
+        request,
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
+    )
+
+def nineties(request):
+    yearObject = yearRangePlaylistClass()
+    passId = yearObject.NinetiesPlaylist()
+    url = yearObject.showPlaylist(passId)
+    return render(
+        request,
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
+    )
+
+def millenial(request):
+    yearObject = yearRangePlaylistClass()
+    passId = yearObject.millennialPlaylist()
+    url = yearObject.showPlaylist(passId)
+    return render(
+        request,
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
+    )
+
+def international(request):
+    intObject = internationalPlaylistClass()
+    passId = intObject.internationalPlaylist()
+    url = intObject.showPlaylist(passId)
+    return render(
+        request,
+        'hello/playlist_view.html',
+        {
+            'playlistUrl': url
+        }
+    )
+
+def artists(request):
+    return render(
+        request,
+        'hello/artists.html'
+    )
+
+def uncleposty(request):
+    raObj = relatedArtistsPlaylistClass()
+    raObj.unclepostyPlaylist()
     return render(
         request,
         'hello/playlist_view.html'
     )
 
-def fourties(request):
-    YearRangePlaylist.fourtiesPlaylist()
+def selenagomez(request):
+    return render(
+        request,
+        'hello/playlist_view.html'
+    )
+
+def rezz(request):
+    return render(
+        request,
+        'hello/playlist_view.html'
+    )
+
+def atribecalledquest(request):
+    return render(
+        request,
+        'hello/playlist_view.html'
+    )
+
+def travisscott(request):
+    return render(
+        request,
+        'hello/playlist_view.html'
+    )
+
+def timmcgraw(request):
+    return render(
+        request,
+        'hello/playlist_view.html'
+    )
+
+def nancyajram(request):
+    return render(
+        request,
+        'hello/playlist_view.html'
+    )
+
+def prince(request):
     return render(
         request,
         'hello/playlist_view.html'
