@@ -33,14 +33,12 @@ userId = user['id']
 
 # def beginPlaylist():
 #     spotifyObject.start_playback(device_id=deviceID, context_uri=Playlists)
-
+songs = []
 def internationalPlaylist():
     # setting up variables
     spotifyObject.user_playlist_create(user['id'], 'International Playlist')
     newPlaylist = spotifyObject.current_user_playlists()['items'][0]['id']
     newPlaylistUri = spotifyObject.current_user_playlists()['items'][0]['uri']
-
-    songs = []
     randsongs = []
 
     # functionality
@@ -110,4 +108,91 @@ def internationalPlaylist():
     spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)  #Fill playlist with songs from randsongs list
 
 # internationalPlaylist()  - Testing purposes
+
+songs = []
+class Playlist():
+    def setPlaylist():
+        _songs = []
+        _songs = songs
+    
+
+class PlaylistView():
+    def showPlaylistJSON():
+        print(songs)
+
+class playlistController():
+    def playlist():
+        spotifyObject.user_playlist_create(user['id'], 'International Playlist')
+        newPlaylist = spotifyObject.current_user_playlists()['items'][0]['id']
+        newPlaylistUri = spotifyObject.current_user_playlists()['items'][0]['uri']
+        randsongs = []
+
+    def internationalFill():
+        searchResults = spotifyObject.search('Indian Chill', 1, 0, 'playlist')  # Indian Music
+
+        playlistResult = searchResults['playlists']['items'][0]['id']
+        playlistUser = searchResults['playlists']['items'][0]['owner']['display_name'] # Get playlists and playlist owners from search results
+
+        playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+        for x in range(0,len(playlist['items'])):
+            songs.append(playlist['items'][x]['track']['uri'])  #fill playlist list with all songs from search results
+
+        searchResults = spotifyObject.search('Arab Mood Booster', 1, 0, 'playlist')       #Do another search for additional songs and veriety
+
+        playlistResult = searchResults['playlists']['items'][0]['id']
+        playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+        playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+        for x in range(0,len(playlist['items'])):
+            songs.append(playlist['items'][x]['track']['uri'])  # add to playlist
+
+        searchResults = spotifyObject.search('Arab Mood Booster', 1, 0, 'playlist')   # Arabic Music
+
+        playlistResult = searchResults['playlists']['items'][0]['id']
+        playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+        playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+        for x in range(0,len(playlist['items'])):
+            songs.append(playlist['items'][x]['track']['uri'])  # add to playlist
+
+            searchResults = spotifyObject.search('songs that get europeans turnt', 1, 0, 'playlist')   # European Music
+
+        playlistResult = searchResults['playlists']['items'][0]['id']
+        playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+        playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+        for x in range(0,len(playlist['items'])):
+            songs.append(playlist['items'][x]['track']['uri'])  # add to playlist
+        
+        searchResults = spotifyObject.search('Korean Chill', 1, 0, 'playlist')       # Korean music
+
+        playlistResult = searchResults['playlists']['items'][0]['id']
+        playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+        playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+        for x in range(0,len(playlist['items'])):
+            songs.append(playlist['items'][x]['track']['uri'])  # add to playlist
+
+        searchResults = spotifyObject.search('African Heat', 1, 0, 'playlist')       # African music
+
+        playlistResult = searchResults['playlists']['items'][0]['id']
+        playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
+
+        playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
+
+        for x in range(0,len(playlist['items'])):
+            songs.append(playlist['items'][x]['track']['uri'])  # add to playlist
+
+        for x in range(0,29):
+            randsongs.append(songs[random.randint(0,(len(songs) - 1))])     #Fill randsongs list with  30 randomly selected songs from playlist list
+
+        spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)  #Fill playlist with songs from randsongs list
+
+
+
 
