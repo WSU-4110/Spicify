@@ -64,7 +64,7 @@ body {
 
 .dash-nav ul {
     background: #2b2929;
-    list-style: none;S
+    list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
