@@ -64,7 +64,7 @@ body {
 
 .dash-nav ul {
     background: #2b2929;
-    list-style: none;S
+    list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -376,61 +376,3 @@ footer {
   }
     
 }
-
-/* https://images.unsplash.com/photo-1524847390379-2fb0cc1953a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80 */
-
- @media only screen and (max-width: 1000px) {
-    body {
-        grid-template:
-        "nav" 1fr
-        "categories" 4fr
-        "footer" 1fr / 1fr
-    }
-
-    .dash-nav {
-        grid-area: nav;
-        height: 50%;
-    }
-
-    .dash-nav ul {
-        height: 0%;
-    }
-
-    .dash-nav ul li {
-        display: none;
-        /* height: 0%; */
-    }
-
-    .cg {
-        grid-area: categories;
-        margin: 0 40px 0 20px;
-    }
-
-    .m {
-        margin-top: 20px;
-    }
-
-    footer {
-        grid-area: footer;
-    }
-
-    .buts {
-        display: grid;
-        grid-template-rows: repeat(6, 1fr);
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .btns {
-        /* margin: 0 25%; */
-        margin: 0 0 20px 0;
-        font-size: 150%;
-        height: 10em;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    footer {
-        display: flex;
-        justify-content: center;
-    }
-} 
