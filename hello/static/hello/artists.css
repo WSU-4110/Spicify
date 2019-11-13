@@ -27,7 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 100%;
+    /* width: 100%; */
     align-self: flex-start;
     /* border-radius: 10px; */
     /* position: fixed; */
@@ -60,7 +60,7 @@ body {
 
 .dash-nav ul {
     background: #2b2929;
-    width: 100%;
+    /* width: 100%; */
     list-style: none;
     display: flex;
     flex-direction: column;

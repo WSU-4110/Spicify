@@ -503,6 +503,11 @@ class yearRangePlaylistClass():
         playlistId = newPlaylist
         return playlistId
 
+    def showPlaylist(self, passedId):
+        playlistUrl = 'https://open.spotify.com/embed/playlist/%s' % (passedId)
+        # print(playlistUrl)
+        return playlistUrl
+
     def returnPlaylists(self):
         # myPlaylists = spotifyObject.current_user_playlists()['items']
 
