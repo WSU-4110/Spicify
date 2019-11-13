@@ -22,7 +22,8 @@ def category(request):
         'hello/category.html',
         {
             'name': SpotipyFunctions.displayname,
-            'followers': SpotipyFunctions.followers
+            'followers': SpotipyFunctions.followers,
+            'playlist': SpotipyFunctions.playlistList
         }
     )
 
