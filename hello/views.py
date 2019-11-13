@@ -27,7 +27,13 @@ def category(request):
     )
 
 def layout(request):
-    return render(request, 'hello/layout.html')
+    return render(
+        request, 
+        'hello/layout.html',
+        {
+            'name': SpotipyFunctions.displayname,
+        }
+    )
 
 def workout(request):
     workoutObject = workoutPlaylistClass()
