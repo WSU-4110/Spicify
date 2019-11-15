@@ -1,41 +1,6 @@
-<!DOCTYPE html>
-<html>
+{% extends 'hello/layout.html' %}
 
-<head>
-    <meta charset="utf-8" />
-    <title>Spicify</title>
-
-    <!-- deletes cache (for dev purposes) -->
-
-    <meta http-equiv="cache-control" content="max-age=0" />
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="expires" content="0" />
-    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-    <meta http-equiv="pragma" content="no-cache" />
-
-    <!-- Link to bootstrap css library -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'hello/site.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'hello/artists.css' %}" type="text/css">
-</head>
-
-<body>
-
-<nav class="dash-nav">
-    <ul>
-        <!--  href="{% url 'home' %}" -->
-        <div class="logo"><a href="{% url 'category' %}">Spicify</a></div>
-        <li> <a class="navButton" href="{% url 'category' %}"> Home </a> </li>
-        <!-- <li><a class="navbar-brand" href="{% url 'category' %}">Categories</a></li>  -->
-        <hr>
-        <li>Playlists</li>
-        <!-- <ul class="playlists">
-                        <li></li>
-                    </ul> -->
-    </ul>
-</nav>
+{% block content %}
 
 <div class="cg">
     <p class="m">Select the artist for your related artists playlist!</p>
@@ -82,6 +47,4 @@
     </div>
 </div>
 
-</body>
-
-</html>
+{% endblock %}
