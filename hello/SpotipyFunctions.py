@@ -35,7 +35,7 @@ for i in range(0,len(myPlaylists)):
 
 playlistList
 
-print(playlistList)
+# print(playlistList)
 
 
 

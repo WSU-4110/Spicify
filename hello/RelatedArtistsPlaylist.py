@@ -27,14 +27,19 @@ class relatedArtistsPlaylistClass():
 
     def unclepostyPlaylist(self):
         
-        searchResults = spotifyObject.search('artist:Post+Malone', 1, 0, 'artist')
-        print(searchResults)
-        # getArtist = searchResults['artist']['items'][0]['id']
-        
-        # # store seached songs in list
-        # for x in getArtist:
-        #     artistId.append(x['id'])
-        # print(artistId)
+        searchResults = spotifyObject.search('Post+Malone', 1, 0, 'artist')     # search for selected artist
+        getArtist = searchResults['artists']['items'][0]
+        artistId = getArtist['id']          # get slected artist's Id
+
+        relatedArtists = spotifyObject.artist_related_artists(artistId)
+        artists = relatedArtists['artists']
+        # for x in artists:
+        #     artistName = (x['name'])
+        #     artistSearch = spotifyObject.search(artistName, 20, 0 ,'tracks')
+        #     songs.append()
+
+
+
 
 raObj = relatedArtistsPlaylistClass()
 raObj.unclepostyPlaylist()
