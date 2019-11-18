@@ -17,18 +17,26 @@ def hello_there(request, name):
     return render(request,'hello/hello_there.html')
 
 def category(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
+    print(playlistDisplay)
     return render(
         request,
         'hello/category.html',
         {
             'name': SpotipyFunctions.displayname,
             'followers': SpotipyFunctions.followers,
-            'playlist': SpotipyFunctions.playlistList
+            'playlist': playlistDisplay
         }
     )
 
 def layout(request):
-    return render(request, 'hello/layout.html')
+    return render(
+        request, 
+        'hello/layout.html',
+        {
+            'name': SpotipyFunctions.displayname,
+        }
+    )
 
 def workout(request):
     workoutObject = workoutPlaylistClass()

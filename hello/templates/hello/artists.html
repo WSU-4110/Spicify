@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+{% extends 'hello/layout.html' %}
 
 <head>
     <meta charset="utf-8" />
@@ -37,6 +36,7 @@
                     </ul> -->
     </ul>
 </nav>
+{% block content %}
 
 <div class="cg">
     <p class="m">Select the artist for your related artists playlist!</p>
@@ -83,6 +83,4 @@
     </div>
 </div>
 
-</body>
-
-</html>
+{% endblock %}

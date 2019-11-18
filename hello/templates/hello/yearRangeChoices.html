@@ -1,34 +1,6 @@
-<!DOCTYPE html>
-<html>
+{% extends 'hello/layout.html' %}
 
-<head>
-    <meta charset="utf-8" />
-    <title>Spicify</title>
-
-    <!-- Link to bootstrap css library -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'hello/site.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'hello/yearRange.css' %}" type="text/css">
-</head>
-
-<body>
-
-<nav class="dash-nav">
-    <ul>
-        <!--  href="{% url 'home' %}" -->
-        <div class="logo"><a href="{% url 'category' %}">Spicify</a></div>
-        <li> <a class="navButton" href="{% url 'category' %}"> Home </a> </li>
-        <!-- <li><a class="navbar-brand" href="{% url 'category' %}">Categories</a></li>  -->
-        <li class="message"> {{name}} </li>
-        <hr>
-        <li>Playlists</li>
-        <!-- <ul class="playlists">
-                        <li></li>
-                    </ul> -->
-    </ul>
-</nav>
+{% block content %}
 <div class="cg">
     <p class="m">Please choose the year you want to listen to: </p>
     <div class="buts">
@@ -72,6 +44,4 @@
     </div>
 </div>
 
-</body>
-
-</html>
+{% endblock %}

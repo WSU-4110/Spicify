@@ -22,20 +22,34 @@ spotifyObject = spotipy.Spotify(auth=token)
 user = spotifyObject.current_user()
 displayname = user['display_name'] # name
 followers = user['followers']['total'] # followers
+userId = user['id']
 # profile_pic = user['images'][0]['url']  # profile pic
 
 
-myPlaylists = spotifyObject.current_user_playlists()['items']
 
-playlistList = []
 
-for i in range(0,len(myPlaylists)):
-    playlistList.append(myPlaylists[i]['name'])
-    #print(str(myPlaylists[i]['name']))
+def presentPlaylists():
+    myPlaylists = spotifyObject.current_user_playlists()['items']
+    playlistList = []
 
-playlistList
+    for i in range(0,len(myPlaylists)):
+        playlistList.append(myPlaylists[i]['name'])
+    return playlistList
 
-# print(playlistList)
+
+def ratePlaylists():
+
+    newName = input("Please enter your rating: ")
+    newPlaylistId = spotifyObject.current_user_playlists()['items'][0]['id']
+    myPlaylists = spotifyObject.current_user_playlists()['items']
+    playlistList = []
+
+    for i in range(0,len(myPlaylists)):
+        playlistList.append(myPlaylists[i]['name'])
+    print(playlistList[0])
+
+    spotifyObject.user_playlist_change_details(user=userId, playlist_id=newPlaylistId, name=(playlistList[0] + " (" + newName + ")"), public=None, collaborative=None, description=None)
+
 
 
 
