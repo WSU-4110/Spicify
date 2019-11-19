@@ -85,6 +85,9 @@ body {
    color: #E59F71;
 }
 
+.logo:hover {
+  
+}
 
 .logo a:hover {
   color: #E59F71;
@@ -100,6 +103,7 @@ body {
 
 .playlist-container {
   padding: 7px 5px 0 0px;
+  overflow: scroll;
 }
 
 .playlist-container .playlist-title {
@@ -264,8 +268,8 @@ footer {
         justify-content: center;
     }
 }
-/* animation unnecessarily slows down site */
-/* @keyframes load-in {
+/* animation slows down site
+@keyframes load-in {
   0% {
     background: gray;
     transform: translateX(-50px);
@@ -291,6 +295,6 @@ footer {
   
   100% {
     opacity: 1;
-  } */
+  }
     
-}
+} */
