@@ -1,0 +1,73 @@
+
+.playlist-msg {
+  display: grid;
+  grid-template: 
+  "msg rating" 100px
+  "playlist playlist" 1fr / 1000px 1fr;
+  background: gray;
+  margin: 100% 300%;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.msg {
+  grid-area:msg;
+  background: rgb(1, 109, 1);
+  color:white;
+  /* border-top-right-radius: 10px; */
+  border-top-left-radius: 10px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.rate {
+    grid-area: rating;
+    height: 260px;
+    padding: 0 10px;
+    background: rgb(128, 167, 128);
+    /* height:275%; */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: green;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: rgb(5, 104, 5);  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: green;
+}
+
+.iframe-cont {
+  grid-area:playlist;
+}
+
+iframe {
+
+}

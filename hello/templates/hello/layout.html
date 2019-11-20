@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{% static 'hello/categories.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'hello/artists.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'hello/yearRange.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'hello/playlist_view.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'hello/playlist.css' %}" type="text/css">
 </head>
 
 <body>
@@ -23,7 +23,12 @@
         <ul class="top-header">
             <div class="logo"><a href="{% url 'home' %}">Spicify</a></div>
             <li> <a class="navButton" href="{% url 'category' %}"> Home </a> </li>
-            <li class="message"> {{name}} </li>
+            <li class="message"> 
+                <div class="user-pic">
+                    <img src="{{picture}}" alt="">
+                </div>
+                <p>{{name}}</p>
+            </li>
         </ul>
         <hr class="hr">
         <div class="playlist-container">

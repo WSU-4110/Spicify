@@ -24,7 +24,7 @@ def category(request):
         'hello/category.html',
         {
             'name': SpotipyFunctions.displayname,
-            'followers': SpotipyFunctions.followers,
+            'picture': SpotipyFunctions.profile_pic,
             'playlist': playlistDisplay
         }
     )
@@ -35,6 +35,8 @@ def layout(request):
         'hello/layout.html',
         {
             'name': SpotipyFunctions.displayname,
+            'picture': SpotipyFunctions.profile_pic,
+            'playlist': playlistDisplay
         }
     )
 
