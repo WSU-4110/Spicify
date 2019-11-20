@@ -17,4 +17,4 @@ We hope all of our users explore and find music outside their comfort zone!
 
 ### Contributors
 
-We had a team of four students contributing on this project. Gianna Marchetti, Travis Preston and Shubham Tiwari.
+We had a team of three students contributing on this project. Gianna Marchetti, Travis Preston and Shubham Tiwari.
