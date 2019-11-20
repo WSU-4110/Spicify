@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>Spicify</title>
 
     <!-- Link to bootstrap css library -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
     {% load static %}
     <link rel="stylesheet" href="{% static 'hello/site.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'hello/categories.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'hello/artists.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'hello/yearRange.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'hello/playlist_view.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'hello/playlist.css' %}" type="text/css">
 </head>
+
 <body>
 
     <nav class="dash-nav">
-        <ul>
+        <ul class="top-header">
             <div class="logo"><a href="{% url 'home' %}">Spicify</a></div>
             <li> <a class="navButton" href="{% url 'category' %}"> Home </a> </li>
-            <li class="message"> {{name}} </li>
-            <hr>
-            <li>Playlists</li>
-            <ul>
-              <br>
-              {% for i in playlist%}
-              <br>
-              <li>{{i}}</li>
-              {% endfor %}
-              <br>
+            <li class="message"> 
+                <div class="user-pic">
+                    <img src="{{picture}}" alt="">
+                </div>
+                <p>{{name}}</p>
+            </li>
         </ul>
+        <hr class="hr">
+        <div class="playlist-container">
+            <h4 class="playlist-title">Playlists</h4>
+            <ul class="bottom-header">
+                    {% for i in playlist%}
+                    <li>{{i}}</li>
+                    {% endfor %}
+            </ul>
+        </div>
     </nav>
     {% block content %}
     {% endblock %}
