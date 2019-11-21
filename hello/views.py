@@ -24,6 +24,7 @@ def category(request):
         'hello/category.html',
         {
             'name': SpotipyFunctions.displayname,
+            # 'picture': SpotipyFunctions.profile_pic,
             'playlist': playlistDisplay
         }
     )
@@ -35,6 +36,7 @@ def layout(request):
         'hello/layout.html',
         {
             'name': SpotipyFunctions.displayname,
+            # 'picture': SpotipyFunctions.profile_pic,
             'playlist': playlistDisplay
         }
     )
@@ -247,51 +249,129 @@ def artists(request):
     )
 
 def uncleposty(request):
-    raObj = relatedArtistsPlaylistClass()
-    raObj.unclepostyPlaylist()
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
+    raObject = relatedArtistsPlaylistClass()
+    raObject.unclepostyPlaylist()
+    passId = raObject.savePlaylist()
+    url = raObject.showPlaylist(passId)
     return render(
         request,
-        'hello/playlist_view.html'
+        'hello/playlist_view.html',
+        {
+            'name': SpotipyFunctions.displayname,
+            'playlist': playlistDisplay,
+            'playlistUrl': url
+        }
     )
 
 def selenagomez(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
+    raObject = relatedArtistsPlaylistClass()
+    raObject.selenagomezPlaylist()
+    passId = raObject.savePlaylist()
+    url = raObject.showPlaylist(passId)
     return render(
         request,
-        'hello/playlist_view.html'
+        'hello/playlist_view.html',
+        {
+            'name': SpotipyFunctions.displayname,
+            'playlist': playlistDisplay,
+            'playlistUrl': url
+        }
     )
 
 def rezz(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
+    raObject = relatedArtistsPlaylistClass()
+    raObject.rezzPlaylist()
+    passId = raObject.savePlaylist()
+    url = raObject.showPlaylist(passId)
     return render(
         request,
-        'hello/playlist_view.html'
+        'hello/playlist_view.html',
+        {
+            'name': SpotipyFunctions.displayname,
+            'playlist': playlistDisplay,
+            'playlistUrl': url
+        }
     )
 
 def atribecalledquest(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
+    raObject = relatedArtistsPlaylistClass()
+    raObject.atribecalledquestPlaylist()
+    passId = raObject.savePlaylist()
+    url = raObject.showPlaylist(passId)
     return render(
         request,
-        'hello/playlist_view.html'
+        'hello/playlist_view.html',
+        {
+            'name': SpotipyFunctions.displayname,
+            'playlist': playlistDisplay,
+            'playlistUrl': url
+        }
     )
 
 def travisscott(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
+    raObject = relatedArtistsPlaylistClass()
+    raObject.travisscottPlaylist()
+    passId = raObject.savePlaylist()
+    url = raObject.showPlaylist(passId)
     return render(
         request,
-        'hello/playlist_view.html'
+        'hello/playlist_view.html',
+        {
+            'name': SpotipyFunctions.displayname,
+            'playlist': playlistDisplay,
+            'playlistUrl': url
+        }
     )
 
 def timmcgraw(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
+    raObject = relatedArtistsPlaylistClass()
+    raObject.timmcgrawPlaylist()
+    passId = raObject.savePlaylist()
+    url = raObject.showPlaylist(passId)
     return render(
         request,
-        'hello/playlist_view.html'
+        'hello/playlist_view.html',
+        {
+            'name': SpotipyFunctions.displayname,
+            'playlist': playlistDisplay,
+            'playlistUrl': url
+        }
     )
 
 def nancyajram(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
+    raObject = relatedArtistsPlaylistClass()
+    raObject.nancyajramPlaylist()
+    passId = raObject.savePlaylist()
+    url = raObject.showPlaylist(passId)
     return render(
         request,
-        'hello/playlist_view.html'
+        'hello/playlist_view.html',
+        {
+            'name': SpotipyFunctions.displayname,
+            'playlist': playlistDisplay,
+            'playlistUrl': url
+        }
     )
 
 def prince(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
+    raObject = relatedArtistsPlaylistClass()
+    raObject.princePlaylist()
+    passId = raObject.savePlaylist()
+    url = raObject.showPlaylist(passId)
     return render(
         request,
-        'hello/playlist_view.html'
+        'hello/playlist_view.html',
+        {
+            'name': SpotipyFunctions.displayname,
+            'playlist': playlistDisplay,
+            'playlistUrl': url
+        }
     )

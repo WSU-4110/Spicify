@@ -27,7 +27,6 @@ userId = user['id']
 
 
 
-
 def presentPlaylists():
     myPlaylists = spotifyObject.current_user_playlists()['items']
     playlistList = []
