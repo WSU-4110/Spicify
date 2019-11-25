@@ -106,7 +106,7 @@ def yearRange(request):
         {
             'playlistName': YearRangePlaylist.playlist_name,
             'playlist': playlistDisplay,
-            'name': SpotipyFunctions.displayname
+            'name': SpotipyFunctions.displayname,
             'picture': SpotipyFunctions.profile_pic,
 
         }
