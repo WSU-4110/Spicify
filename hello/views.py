@@ -18,31 +18,31 @@ def hello_there(request, name):
 
 def category(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
-    print(playlistDisplay)
+    # print(playlistDisplay)
     return render(
         request,
         'hello/category.html',
         {
             'name': SpotipyFunctions.displayname,
             'picture': SpotipyFunctions.profile_pic,
-            'playlist': playlistDisplay
+            'playlist': playlistDisplay,
         }
     )
 
 def layout(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
     return render(
-        request, 
+        request,
         'hello/layout.html',
         {
             'name': SpotipyFunctions.displayname,
             'picture': SpotipyFunctions.profile_pic,
             'playlist': playlistDisplay,
-            'playlist': playlistDisplay
         }
     )
-
+    
 def workout(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
     workoutObject = workoutPlaylistClass()
     workoutObject.workoutTracks_uri()
     passId = workoutObject.savePlaylist()
@@ -52,6 +52,7 @@ def workout(request):
         request,
         'hello/playlist_view.html',
         {
+
             'playlistUrl': url,
             'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
@@ -60,6 +61,7 @@ def workout(request):
     )
 
 def study(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
     studyObject = studyPlaylistClass()
     studyObject.studyTracks_uri()
     passId = studyObject.savePlaylist()
@@ -69,6 +71,7 @@ def study(request):
         request,
         'hello/playlist_view.html',
         {
+
             'playlistUrl': url,
             'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
@@ -77,6 +80,7 @@ def study(request):
     )
 
 def driving(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
     drivingObject = drivingPlaylistClass()
     drivingObject.drivingTracks_uri()
     passId = drivingObject.savePlaylist()
@@ -101,13 +105,15 @@ def yearRange(request):
         'hello/yearRangeChoices.html',
         {
             'playlistName': YearRangePlaylist.playlist_name,
-            'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
+            'name': SpotipyFunctions.displayname
             'picture': SpotipyFunctions.profile_pic,
+
         }
     )
 
 def thirties(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
     yearObject = yearRangePlaylistClass()
     passId = yearObject.thirtiesPlaylist()
     url = yearObject.showPlaylist(passId)
@@ -124,6 +130,7 @@ def thirties(request):
     )
 
 def fourties(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
     yearObject = yearRangePlaylistClass()
     passId = yearObject.fourtiesPlaylist()
     url = yearObject.showPlaylist(passId)
@@ -140,6 +147,7 @@ def fourties(request):
     )
 
 def fifties(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
     yearObject = yearRangePlaylistClass()
     passId = yearObject.fiftiesPlaylist()
     url = yearObject.showPlaylist(passId)
@@ -156,6 +164,7 @@ def fifties(request):
     )
 
 def sixties(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
     yearObject = yearRangePlaylistClass()
     passId = yearObject.sixtiesPlaylist()
     url = yearObject.showPlaylist(passId)
@@ -172,6 +181,7 @@ def sixties(request):
     )
 
 def seventies(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
     yearObject = yearRangePlaylistClass()
     passId = yearObject.SeventiesPlaylist()
     url = yearObject.showPlaylist(passId)
@@ -188,6 +198,7 @@ def seventies(request):
     )
 
 def eighties(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
     yearObject = yearRangePlaylistClass()
     passId = yearObject.eightiesPlaylist()
     url = yearObject.showPlaylist(passId)
@@ -204,6 +215,7 @@ def eighties(request):
     )
 
 def nineties(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
     yearObject = yearRangePlaylistClass()
     passId = yearObject.NinetiesPlaylist()
     url = yearObject.showPlaylist(passId)
@@ -220,6 +232,7 @@ def nineties(request):
     )
 
 def millenial(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
     yearObject = yearRangePlaylistClass()
     passId = yearObject.millennialPlaylist()
     url = yearObject.showPlaylist(passId)
@@ -236,6 +249,7 @@ def millenial(request):
     )
 
 def international(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
     intObject = internationalPlaylistClass()
     passId = intObject.internationalPlaylist()
     url = intObject.showPlaylist(passId)
@@ -259,107 +273,147 @@ def artists(request):
         {
             'name': SpotipyFunctions.displayname,
             'picture': SpotipyFunctions.profile_pic,
-            'playlist': playlistDisplay
+            'playlist': playlistDisplay,
         }
     )
 
 def uncleposty(request):
-    raObj = relatedArtistsPlaylistClass()
-    raObj.unclepostyPlaylist()
     playlistDisplay = SpotipyFunctions.presentPlaylists()
+    raObject = relatedArtistsPlaylistClass()
+    raObject.unclepostyPlaylist()
+    passId = raObject.savePlaylist()
+    url = raObject.showPlaylist(passId)
     return render(
         request,
         'hello/playlist_view.html',
         {
             'name': SpotipyFunctions.displayname,
+            'playlist': playlistDisplay,
+            'playlistUrl': url,
             'picture': SpotipyFunctions.profile_pic,
-            'playlist': playlistDisplay
         }
     )
 
 def selenagomez(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
+    raObject = relatedArtistsPlaylistClass()
+    raObject.selenagomezPlaylist()
+    passId = raObject.savePlaylist()
+    url = raObject.showPlaylist(passId)
     return render(
         request,
         'hello/playlist_view.html',
         {
             'name': SpotipyFunctions.displayname,
+            'playlist': playlistDisplay,
+            'playlistUrl': url,
             'picture': SpotipyFunctions.profile_pic,
-            'playlist': playlistDisplay
+
         }
     )
 
 def rezz(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
+    raObject = relatedArtistsPlaylistClass()
+    raObject.rezzPlaylist()
+    passId = raObject.savePlaylist()
+    url = raObject.showPlaylist(passId)
     return render(
         request,
         'hello/playlist_view.html',
         {
             'name': SpotipyFunctions.displayname,
+            'playlist': playlistDisplay,
+            'playlistUrl': url,
             'picture': SpotipyFunctions.profile_pic,
-            'playlist': playlistDisplay
         }
     )
 
 def atribecalledquest(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
+    raObject = relatedArtistsPlaylistClass()
+    raObject.atribecalledquestPlaylist()
+    passId = raObject.savePlaylist()
+    url = raObject.showPlaylist(passId)
     return render(
         request,
         'hello/playlist_view.html',
         {
             'name': SpotipyFunctions.displayname,
+            'playlist': playlistDisplay,
+            'playlistUrl': url,
             'picture': SpotipyFunctions.profile_pic,
-            'playlist': playlistDisplay
         }
     )
 
 def travisscott(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
+    raObject = relatedArtistsPlaylistClass()
+    raObject.travisscottPlaylist()
+    passId = raObject.savePlaylist()
+    url = raObject.showPlaylist(passId)
     return render(
         request,
         'hello/playlist_view.html',
         {
             'name': SpotipyFunctions.displayname,
+            'playlist': playlistDisplay,
+            'playlistUrl': url,
             'picture': SpotipyFunctions.profile_pic,
-            'playlist': playlistDisplay
         }
     )
 
 def timmcgraw(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
+    raObject = relatedArtistsPlaylistClass()
+    raObject.timmcgrawPlaylist()
+    passId = raObject.savePlaylist()
+    url = raObject.showPlaylist(passId)
     return render(
         request,
         'hello/playlist_view.html',
         {
             'name': SpotipyFunctions.displayname,
+            'playlist': playlistDisplay,
+            'playlistUrl': url,
             'picture': SpotipyFunctions.profile_pic,
-            'playlist': playlistDisplay
         }
     )
 
 def nancyajram(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
+    raObject = relatedArtistsPlaylistClass()
+    raObject.nancyajramPlaylist()
+    passId = raObject.savePlaylist()
+    url = raObject.showPlaylist(passId)
     return render(
         request,
         'hello/playlist_view.html',
         {
             'name': SpotipyFunctions.displayname,
+            'playlist': playlistDisplay,
+            'playlistUrl': url,
             'picture': SpotipyFunctions.profile_pic,
-            'playlist': playlistDisplay
         }
     )
 
 def prince(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
+    raObject = relatedArtistsPlaylistClass()
+    raObject.princePlaylist()
+    passId = raObject.savePlaylist()
+    url = raObject.showPlaylist(passId)
     return render(
         request,
         'hello/playlist_view.html',
         {
             'name': SpotipyFunctions.displayname,
+            'playlist': playlistDisplay,
+            'playlistUrl': url,
             'picture': SpotipyFunctions.profile_pic,
-            'playlist': playlistDisplay
         }
     )
+      
 def rate(request):
     rating = request.GET['rate']
     SpotipyFunctions.ratePlaylists(rating)
@@ -370,6 +424,6 @@ def rate(request):
         {
             'name': SpotipyFunctions.displayname,
             'picture': SpotipyFunctions.profile_pic,
-            'playlist': playlistDisplay
+            'playlist': playlistDisplay,
         }
     )
