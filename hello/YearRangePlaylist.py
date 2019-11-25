@@ -99,7 +99,10 @@ class yearRangePlaylistClass():
 
         Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
         playlistId = newPlaylist
-        return playlistId
+
+        print(len(randsongs))
+
+        return len(randsongs)
 
     
 
@@ -133,7 +136,7 @@ class yearRangePlaylistClass():
             songs.append(playlist['items'][x]['track']['uri'])
 
 
-        for x in range(0,29):
+        for x in range(0,30):
             randsongs.append(songs[random.randint(0,(len(songs) - 1))])
 
         print(randsongs)
@@ -142,7 +145,9 @@ class yearRangePlaylistClass():
 
         Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
         playlistId = newPlaylist
-        return playlistId
+        print(len(randsongs))
+
+        return len(randsongs)
         
 
     def fiftiesPlaylist(self):
@@ -194,14 +199,15 @@ class yearRangePlaylistClass():
         for x in range(0,len(playlist['items'])):
             songs.append(playlist['items'][x]['track']['uri'])
 
-        for x in range(0,29):
+        for x in range(0,30):
             randsongs.append(songs[random.randint(0,(len(songs) - 1))])
 
         spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)
 
         Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
-        playlistId = newPlaylist
-        return playlistId
+        print(len(randsongs))
+
+        return len(randsongs)
         
 
     def sixtiesPlaylist(self):
@@ -255,14 +261,15 @@ class yearRangePlaylistClass():
         for x in range(0,len(playlist['items'])):
             songs.append(playlist['items'][x]['track']['uri'])
 
-        for x in range(0,29):
+        for x in range(0,30):
             randsongs.append(songs[random.randint(0,(len(songs) - 1))])
 
         spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)
 
         Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
-        playlistId = newPlaylist
-        return playlistId
+        print(len(randsongs))
+
+        return len(randsongs)
    
 
     def eightiesPlaylist(self):
@@ -326,14 +333,16 @@ class yearRangePlaylistClass():
         for x in range(0,len(playlist['items'])):
             songs.append(playlist['items'][x]['track']['uri'])
 
-        for x in range(0,29):
+        for x in range(0,30):
             randsongs.append(songs[random.randint(0,(len(songs) - 1))])
 
         spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)
 
         Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
         playlistId = newPlaylist
-        return playlistId
+        print(len(randsongs))
+
+        return len(randsongs)
         
 
     def SeventiesPlaylist(self):
@@ -385,14 +394,16 @@ class yearRangePlaylistClass():
         for x in range(0,len(playlist['items'])):
             songs.append(playlist['items'][x]['track']['uri'])
 
-        for x in range(0,29):
+        for x in range(0,30):
             randsongs.append(songs[random.randint(0,(len(songs) - 1))])
 
         spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)
 
         Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
         playlistId = newPlaylist
-        return playlistId
+        print(len(randsongs))
+
+        return len(randsongs)
         
 
     def NinetiesPlaylist(self):
@@ -435,14 +446,16 @@ class yearRangePlaylistClass():
         for x in range(0,len(playlist['items'])):
             songs.append(playlist['items'][x]['track']['uri'])
 
-        for x in range(0,29):
+        for x in range(0,30):
             randsongs.append(songs[random.randint(0,(len(songs) - 1))])
 
         spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)
 
         Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
         playlistId = newPlaylist
-        return playlistId
+        print(len(randsongs))
+
+        return len(randsongs)
     
 
     def millennialPlaylist(self):
@@ -494,14 +507,16 @@ class yearRangePlaylistClass():
         for x in range(0,len(playlist['items'])):
             songs.append(playlist['items'][x]['track']['uri'])
 
-        for x in range(0,29):
+        for x in range(0,30):
             randsongs.append(songs[random.randint(0,(len(songs) - 1))])
 
         spotifyObject.user_playlist_add_tracks(user=userId, playlist_id=newPlaylist, tracks=randsongs)
 
         Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
         playlistId = newPlaylist
-        return playlistId
+        print(len(randsongs))
+
+        return len(randsongs)
 
     
     def showPlaylist(self, passedId):
