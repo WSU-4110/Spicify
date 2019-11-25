@@ -100,7 +100,7 @@ class drivingPlaylistClass():
     
     def showPlaylist(self, passedId):
         playlistUrl = 'https://open.spotify.com/embed/playlist/%s' % (passedId)
-        print(playlistUrl)
+        # print(playlistUrl)
         return playlistUrl
 
 # drivingObject = drivingPlaylistClass()

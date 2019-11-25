@@ -1,0 +1,10 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+}
+
+#id {
+  padding-left: 100%;
+  width: 1000px;
+  height: 1000px;
+}

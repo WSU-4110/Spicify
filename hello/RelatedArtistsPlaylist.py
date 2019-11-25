@@ -23,20 +23,167 @@ spotifyObject = spotipy.Spotify(auth=token)     # create object of type spotipy
 user = spotifyObject.current_user()             # get current app user
 
 
+randsongs = []  # empty list to store songs that will go into playlist
+songs = []      # empty list to store songs from related artists
+
 class relatedArtistsPlaylistClass():
 
     def unclepostyPlaylist(self):
+        searchResults = spotifyObject.search('Post+Malone', 1, 0, 'artist')     # search for selected artist object
+        getArtist = searchResults['artists']['items'][0]
+        artistId = getArtist['id']          # get slected artist's Id
+
+        relatedArtists = spotifyObject.artist_related_artists(artistId)
+        artists = relatedArtists['artists']     # search for related artists
+
+        for x in artists:
+            artistName = (x['name'])
+            artistSearch = spotifyObject.search(artistName, 2, 0 ,'track')      # search all related artists
+            tracks = artistSearch['tracks']['items']
+            for x in tracks:
+                songs.append(x['uri'])                                          # get songs by realted artists
+                # print(songs)
+    
+
+
+    def selenagomezPlaylist(self):
+        searchResults = spotifyObject.search('Selena+Gomez', 1, 0, 'artist')     # search for selected artist object
+        getArtist = searchResults['artists']['items'][0]
+        artistId = getArtist['id']          # get slected artist's Id
+
+        relatedArtists = spotifyObject.artist_related_artists(artistId)
+        artists = relatedArtists['artists']     # search for related artists
+
+        for x in artists:
+            artistName = (x['name'])
+            artistSearch = spotifyObject.search(artistName, 2, 0 ,'track')      # search all related artists
+            tracks = artistSearch['tracks']['items']
+            for x in tracks:
+                songs.append(x['uri'])                                          # get songs by related artists
+                # print(songs)
+    
+
+    
+    def rezzPlaylist(self):
+        searchResults = spotifyObject.search('Rezz', 1, 0, 'artist')     # search for selected artist object
+        getArtist = searchResults['artists']['items'][0]
+        artistId = getArtist['id']          # get slected artist's Id
+
+        relatedArtists = spotifyObject.artist_related_artists(artistId)
+        artists = relatedArtists['artists']     # search for related artists
+
+        for x in artists:
+            artistName = (x['name'])
+            artistSearch = spotifyObject.search(artistName, 2, 0 ,'track')      # search all related artists
+            tracks = artistSearch['tracks']['items']
+            for x in tracks:
+                songs.append(x['uri'])                                          # get songs by related artists
+                # print(songs)
+    
+
+
+    def atribecalledquestPlaylist(self):
+        searchResults = spotifyObject.search('A+Tribe+Called+Quest', 1, 0, 'artist')     # search for selected artist object
+        getArtist = searchResults['artists']['items'][0]
+        artistId = getArtist['id']          # get slected artist's Id
+
+        relatedArtists = spotifyObject.artist_related_artists(artistId)
+        artists = relatedArtists['artists']     # search for related artists
+
+        for x in artists:
+            artistName = (x['name'])
+            artistSearch = spotifyObject.search(artistName, 2, 0 ,'track')      # search all related artists
+            tracks = artistSearch['tracks']['items']
+            for x in tracks:
+                songs.append(x['uri'])                                          # get songs by related artists
+                # print(songs)
+    
+
+
+    def travisscottPlaylist(self):
+        searchResults = spotifyObject.search('Travis+Scott', 1, 0, 'artist')     # search for selected artist object
+        getArtist = searchResults['artists']['items'][0]
+        artistId = getArtist['id']          # get slected artist's Id
+
+        relatedArtists = spotifyObject.artist_related_artists(artistId)
+        artists = relatedArtists['artists']     # search for related artists
+
+        for x in artists:
+            artistName = (x['name'])
+            artistSearch = spotifyObject.search(artistName, 2, 0 ,'track')      # search all related artists
+            tracks = artistSearch['tracks']['items']
+            for x in tracks:
+                songs.append(x['uri'])                                          # get songs by related artists
+                # print(songs)
+    
+
+    def timmcgrawPlaylist(self):
+        searchResults = spotifyObject.search('Tim+McGraw', 1, 0, 'artist')     # search for selected artist object
+        getArtist = searchResults['artists']['items'][0]
+        artistId = getArtist['id']          # get slected artist's Id
+
+        relatedArtists = spotifyObject.artist_related_artists(artistId)
+        artists = relatedArtists['artists']     # search for related artists
+
+        for x in artists:
+            artistName = (x['name'])
+            artistSearch = spotifyObject.search(artistName, 2, 0 ,'track')      # search all related artists
+            tracks = artistSearch['tracks']['items']
+            for x in tracks:
+                songs.append(x['uri'])                                          # get songs by related artists
+                # print(songs)
+
+
+    def nancyajramPlaylist(self):
+        searchResults = spotifyObject.search('Nancy+Ajram', 1, 0, 'artist')     # search for selected artist object
+        getArtist = searchResults['artists']['items'][0]
+        artistId = getArtist['id']          # get slected artist's Id
+
+        relatedArtists = spotifyObject.artist_related_artists(artistId)
+        artists = relatedArtists['artists']     # search for related artists
+
+        for x in artists:
+            artistName = (x['name'])
+            artistSearch = spotifyObject.search(artistName, 2, 0 ,'track')      # search all related artists
+            tracks = artistSearch['tracks']['items']
+            for x in tracks:
+                songs.append(x['uri'])                                          # get songs by related artists
+                # print(songs)
+
+
+    def princePlaylist(self):
+        searchResults = spotifyObject.search('Prince', 5, 0, 'artist')     # search for selected artist object
+        getArtist = searchResults['artists']['items'][1]
+        artistId = getArtist['id']          # get slected artist's Id
+
+        relatedArtists = spotifyObject.artist_related_artists(artistId)
+        artists = relatedArtists['artists']     # search for related artists
+
+        for x in artists:
+            artistName = (x['name'])
+            # print(artistName)
+            artistSearch = spotifyObject.search(artistName, 2, 0 ,'track')      # search all related artists
+            tracks = artistSearch['tracks']['items']
+            for x in tracks:
+                songs.append(x['uri'])                                          # get songs by related artists
+                # print(songs)
+
+   
+    def savePlaylist(self):
+
+        for x in range(0,30):
+            randsongs.append(songs[random.randint(0,(len(songs) - 1))])     #Fill randsongs list with  30 randomly selected songs from playlist list
         
-        searchResults = spotifyObject.search('artist:Post+Malone', 1, 0, 'artist')
-        print(searchResults)
-        # getArtist = searchResults['artist']['items'][0]['id']
-        
-        # # store seached songs in list
-        # for x in getArtist:
-        #     artistId.append(x['id'])
-        # print(artistId)
+        newPlaylist = spotifyObject.user_playlist_create(user['id'], 'Spicify Related Artist')
+        playlistId = newPlaylist['id'] #create id for new playlist
+        spotifyObject.user_playlist_add_tracks(user['id'], playlistId, randsongs, position=None)
 
-raObj = relatedArtistsPlaylistClass()
-raObj.unclepostyPlaylist()
+        return playlistId
+
+    def showPlaylist(self, passedId):
+        playlistUrl = 'https://open.spotify.com/embed/playlist/%s' % (passedId)
+        return playlistUrl
 
 
+raObject = relatedArtistsPlaylistClass()
+raObject.princePlaylist()

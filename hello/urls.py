@@ -27,4 +27,6 @@ urlpatterns = [
     path("timmcgraw", views.timmcgraw, name="timmcgraw"),
     path("nancyajram", views.nancyajram, name="nancyajram"),
     path("prince", views.prince, name="prince"),
+    path("surpriseme", views.surpriseme, name="surpriseme"),
+    path("rate", views.rate, name="rate"),
 ]

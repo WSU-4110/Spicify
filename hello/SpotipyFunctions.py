@@ -23,8 +23,7 @@ user = spotifyObject.current_user()
 displayname = user['display_name'] # name
 followers = user['followers']['total'] # followers
 userId = user['id']
-profile_pic = user['images'][0]['url']  # profile pic
-
+# profile_pic = user['images'][0]['url']  # profile pic
 
 
 
@@ -37,9 +36,8 @@ def presentPlaylists():
     return playlistList
 
 
-def ratePlaylists():
+def ratePlaylists(rating):
 
-    newName = input("Please enter your rating: ")
     newPlaylistId = spotifyObject.current_user_playlists()['items'][0]['id']
     myPlaylists = spotifyObject.current_user_playlists()['items']
     playlistList = []
@@ -48,7 +46,7 @@ def ratePlaylists():
         playlistList.append(myPlaylists[i]['name'])
     print(playlistList[0])
 
-    spotifyObject.user_playlist_change_details(user=userId, playlist_id=newPlaylistId, name=(playlistList[0] + " (" + newName + ")"), public=None, collaborative=None, description=None)
+    spotifyObject.user_playlist_change_details(user=userId, playlist_id=newPlaylistId, name=(playlistList[0] + " (" + rating + ")"), public=None, collaborative=None, description=None)
 
 
 
