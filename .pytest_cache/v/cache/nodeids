@@ -1,0 +1,8 @@
+[
+  "hello/test_pytest.py::test_unclepostyPlaylist",
+  "hello/test_pytest.py::test_selenagomezPlaylist",
+  "hello/test_pytest.py::test_rezzPlaylist",
+  "hello/test_pytest.py::test_atribecalledquestPlaylist",
+  "hello/test_pytest.py::test_travisscottPlaylist",
+  "hello/test_pytest.py::test_timmcgrawPlaylist"
+]
