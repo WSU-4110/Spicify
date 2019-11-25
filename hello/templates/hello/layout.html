@@ -5,9 +5,12 @@
     <meta charset="utf-8" />
     <title>Spicify</title>
 
-    <!-- Link to bootstrap css library -->
+    <!-- CDN to Bootstrap Library -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CDN to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
     {% load static %}
     <link rel="stylesheet" href="{% static 'hello/site.css' %}" type="text/css">
@@ -22,9 +25,9 @@
     <nav class="dash-nav">
         <ul class="top-header">
             <div class="logo"><a href="{% url 'home' %}">Spicify</a></div>
-            <li> <a class="navButton" href="{% url 'category' %}"> Home </a> </li>
+            <li> <a class="navButton" href="{% url 'category' %}"> <i style="font-size:24px" class="fa">&#xf015;</i> Home </a> </li>
             <li class="message"> 
-                <div class="user-pic">
+                <div class="user-pic ay">
                     <img src="{{picture}}" alt="">
                 </div>
                 <p>{{name}}</p>
@@ -39,6 +42,10 @@
                     {% endfor %}
             </ul>
         </div>
+        <!-- <hr class="hr">
+        <div class="extra-functions">
+            <h4 class="extra-function">Merge Playlists</h4>
+        </div> -->
     </nav>
     {% block content %}
     {% endblock %}
