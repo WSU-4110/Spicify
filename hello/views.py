@@ -8,6 +8,7 @@ from hello.GeneralDrivingPlaylist import drivingPlaylistClass
 from hello.InternationalPlaylist import internationalPlaylistClass
 from hello.StudyPlaylist import studyPlaylistClass
 from hello.RelatedArtistsPlaylist import relatedArtistsPlaylistClass
+from hello.SurpriseMePlaylist import surprisePlaylistClass
 import requests
 
 def home(request):
@@ -366,6 +367,22 @@ def prince(request):
     raObject.princePlaylist()
     passId = raObject.savePlaylist()
     url = raObject.showPlaylist(passId)
+    return render(
+        request,
+        'hello/playlist_view.html',
+        {
+            'name': SpotipyFunctions.displayname,
+            'playlist': playlistDisplay,
+            'playlistUrl': url
+        }
+    )
+
+def surpriseme(request):
+    playlistDisplay = SpotipyFunctions.presentPlaylists()
+    surpriseObject = surprisePlaylistClass()
+    surpriseObject.surpriseSearch()
+    passId = surpriseObject.savePlaylist()
+    url = surpriseObject.showPlaylist(passId)    
     return render(
         request,
         'hello/playlist_view.html',
