@@ -3,6 +3,9 @@ import os
 import spotipy.util as util
 from json.decoder import JSONDecodeError
 import json
+from PIL import Image
+from io import BytesIO 
+import requests
 
 username = '22kpgi2vtrlebcei6eu37db7y'
 scope = 'user-library-read playlist-modify-public'
@@ -23,9 +26,18 @@ user = spotifyObject.current_user()
 displayname = user['display_name'] # name
 followers = user['followers']['total'] # followers
 userId = user['id']
-# profile_pic = user['images'][0]['url']  # profile pic
 
+def getProfilePic():
 
+    try:
+        profile_pic = user['images'][0]['url']  # profile pic
+
+    except: # if user does not have Spotify profile picture display default image
+        print("user does not have profile picture")
+        profile_pic = Image.open(BytesIO(requests.get('https://images.unsplash.com/photo-1534829178390-5312a631a68e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80').content))
+        profile_pic.load()
+
+    return profile_pic
 
 def presentPlaylists():
     myPlaylists = spotifyObject.current_user_playlists()['items']

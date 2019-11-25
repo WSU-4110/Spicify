@@ -100,8 +100,8 @@ class internationalPlaylistClass():
 
         playlist = spotifyObject.user_playlist_tracks(user=playlistUser,playlist_id=playlistResult)
 
-        for x in range(0,len(playlist['items'])):
-            songs.append(playlist['items'][x]['track']['uri'])  # add to playlist
+        # for x in range(0,len(playlist['items'])):
+        #     songs.append(playlist['items'][x]['track']['uri'])  # add to playlist
 
         for x in range(0,29):
             randsongs.append(songs[random.randint(0,(len(songs) - 1))])     #Fill randsongs list with  30 randomly selected songs from playlist list
