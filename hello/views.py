@@ -294,8 +294,7 @@ def artists(request):
 def uncleposty(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
     raObject = relatedArtistsPlaylistClass()
-    raObject.unclepostyPlaylist()
-    passId = raObject.savePlaylist()
+    passId = raObject.unclepostyPlaylist()
     url = raObject.showPlaylist(passId)
     profile_pic = SpotipyFunctions.getProfilePic()
     return render(
@@ -312,8 +311,7 @@ def uncleposty(request):
 def selenagomez(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
     raObject = relatedArtistsPlaylistClass()
-    raObject.selenagomezPlaylist()
-    passId = raObject.savePlaylist()
+    passId = raObject.selenagomezPlaylist()
     url = raObject.showPlaylist(passId)
     profile_pic = SpotipyFunctions.getProfilePic()
     return render(
@@ -331,8 +329,7 @@ def selenagomez(request):
 def rezz(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
     raObject = relatedArtistsPlaylistClass()
-    raObject.rezzPlaylist()
-    passId = raObject.savePlaylist()
+    passId = raObject.rezzPlaylist()
     url = raObject.showPlaylist(passId)
     profile_pic = SpotipyFunctions.getProfilePic()
     return render(
@@ -349,8 +346,7 @@ def rezz(request):
 def atribecalledquest(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
     raObject = relatedArtistsPlaylistClass()
-    raObject.atribecalledquestPlaylist()
-    passId = raObject.savePlaylist()
+    passId = raObject.atribecalledquestPlaylist()
     url = raObject.showPlaylist(passId)
     profile_pic = SpotipyFunctions.getProfilePic()
     return render(
@@ -367,8 +363,7 @@ def atribecalledquest(request):
 def travisscott(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
     raObject = relatedArtistsPlaylistClass()
-    raObject.travisscottPlaylist()
-    passId = raObject.savePlaylist()
+    passId = raObject.travisscottPlaylist()
     url = raObject.showPlaylist(passId)
     profile_pic = SpotipyFunctions.getProfilePic()
     return render(
@@ -385,8 +380,7 @@ def travisscott(request):
 def timmcgraw(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
     raObject = relatedArtistsPlaylistClass()
-    raObject.timmcgrawPlaylist()
-    passId = raObject.savePlaylist()
+    passId = raObject.timmcgrawPlaylist()
     url = raObject.showPlaylist(passId)
     profile_pic = SpotipyFunctions.getProfilePic()
     return render(
@@ -403,8 +397,7 @@ def timmcgraw(request):
 def nancyajram(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
     raObject = relatedArtistsPlaylistClass()
-    raObject.nancyajramPlaylist()
-    passId = raObject.savePlaylist()
+    passId = raObject.nancyajramPlaylist()
     url = raObject.showPlaylist(passId)
     profile_pic = SpotipyFunctions.getProfilePic()
     return render(
@@ -421,8 +414,7 @@ def nancyajram(request):
 def prince(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
     raObject = relatedArtistsPlaylistClass()
-    raObject.princePlaylist()
-    passId = raObject.savePlaylist()
+    passId = raObject.princePlaylist()
     url = raObject.showPlaylist(passId)
     profile_pic = SpotipyFunctions.getProfilePic()
     return render(
