@@ -25,8 +25,8 @@ def category(request):
         'hello/category.html',
         {
             'name': SpotipyFunctions.displayname,
-            # 'picture': SpotipyFunctions.profile_pic,
-            'playlist': playlistDisplay
+            'picture': SpotipyFunctions.profile_pic,
+            'playlist': playlistDisplay,
         }
     )
 
@@ -39,7 +39,6 @@ def layout(request):
             'name': SpotipyFunctions.displayname,
             'picture': SpotipyFunctions.profile_pic,
             'playlist': playlistDisplay,
-            'playlist': playlistDisplay
         }
     )
     
@@ -105,9 +104,10 @@ def yearRange(request):
         'hello/yearRangeChoices.html',
         {
             'playlistName': YearRangePlaylist.playlist_name,
-            'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
+            'name': SpotipyFunctions.displayname
             'picture': SpotipyFunctions.profile_pic,
+
         }
     )
 
@@ -138,10 +138,10 @@ def fourties(request):
         request,
         'hello/playlist_view.html',
         {
+            'playlistUrl': url,
             'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
-            'playlistUrl': url,
-            'picture': SpotipyFunctions.profile_pic
+            'picture': SpotipyFunctions.profile_pic,
         }
     )
 
@@ -155,10 +155,10 @@ def fifties(request):
         request,
         'hello/playlist_view.html',
         {
+            'playlistUrl': url,
             'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
-            'playlistUrl': url,
-            'picture': SpotipyFunctions.profile_pic
+            'picture': SpotipyFunctions.profile_pic,
         }
     )
 
@@ -172,10 +172,10 @@ def sixties(request):
         request,
         'hello/playlist_view.html',
         {
+            'playlistUrl': url,
             'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
-            'playlistUrl': url,
-            'picture': SpotipyFunctions.profile_pic
+            'picture': SpotipyFunctions.profile_pic,
         }
     )
 
@@ -189,10 +189,10 @@ def seventies(request):
         request,
         'hello/playlist_view.html',
         {
+            'playlistUrl': url,
             'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
-            'playlistUrl': url,
-            'picture': SpotipyFunctions.profile_pic
+            'picture': SpotipyFunctions.profile_pic,
         }
     )
 
@@ -223,10 +223,10 @@ def nineties(request):
         request,
         'hello/playlist_view.html',
         {
+            'playlistUrl': url,
             'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
-            'playlistUrl': url,
-            'picture': SpotipyFunctions.profile_pic
+            'picture': SpotipyFunctions.profile_pic,
         }
     )
 
@@ -240,10 +240,10 @@ def millenial(request):
         request,
         'hello/playlist_view.html',
         {
+            'playlistUrl': url,
             'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
-            'playlistUrl': url,
-            'picture': SpotipyFunctions.profile_pic
+            'picture': SpotipyFunctions.profile_pic,
         }
     )
 
@@ -257,10 +257,10 @@ def international(request):
         request,
         'hello/playlist_view.html',
         {
+            'playlistUrl': url,
             'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
-            'playlistUrl': url,
-            'picture': SpotipyFunctions.profile_pic
+            'picture': SpotipyFunctions.profile_pic,
         }
     )
 
@@ -271,22 +271,24 @@ def artists(request):
         'hello/artists.html',
         {
             'name': SpotipyFunctions.displayname,
+            'picture': SpotipyFunctions.profile_pic,
             'playlist': playlistDisplay,
-            'picture': SpotipyFunctions.profile_pic
         }
     )
 
 def uncleposty(request):
-    raObj = relatedArtistsPlaylistClass()
-    raObj.unclepostyPlaylist()
     playlistDisplay = SpotipyFunctions.presentPlaylists()
+    raObject = relatedArtistsPlaylistClass()
+    raObject.unclepostyPlaylist()
+    passId = raObject.savePlaylist()
+    url = raObject.showPlaylist(passId)
     return render(
         request,
         'hello/playlist_view.html',
         {
             'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
-            'playlistUrl': url
+            'playlistUrl': url,
             'picture': SpotipyFunctions.profile_pic,
         }
     )
@@ -303,8 +305,9 @@ def selenagomez(request):
         {
             'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
-            'playlistUrl': url
+            'playlistUrl': url,
             'picture': SpotipyFunctions.profile_pic,
+
         }
     )
 
@@ -320,7 +323,7 @@ def rezz(request):
         {
             'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
-            'playlistUrl': url
+            'playlistUrl': url,
             'picture': SpotipyFunctions.profile_pic,
         }
     )
@@ -337,7 +340,7 @@ def atribecalledquest(request):
         {
             'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
-            'playlistUrl': url
+            'playlistUrl': url,
             'picture': SpotipyFunctions.profile_pic,
         }
     )
@@ -354,8 +357,8 @@ def travisscott(request):
         {
             'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
-            'playlistUrl': url
-            'picture': SpotipyFunctions.profile_pic
+            'playlistUrl': url,
+            'picture': SpotipyFunctions.profile_pic,
         }
     )
 
@@ -371,7 +374,7 @@ def timmcgraw(request):
         {
             'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
-            'playlistUrl': url
+            'playlistUrl': url,
             'picture': SpotipyFunctions.profile_pic,
         }
     )
@@ -388,7 +391,7 @@ def nancyajram(request):
         {
             'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
-            'playlistUrl': url
+            'playlistUrl': url,
             'picture': SpotipyFunctions.profile_pic,
         }
     )
@@ -406,9 +409,10 @@ def prince(request):
             'name': SpotipyFunctions.displayname,
             'picture': SpotipyFunctions.profile_pic,
             'playlist': playlistDisplay,
-            'playlistUrl': url
+            'playlistUrl': url,
         }
     )
+      
 def rate(request):
     rating = request.GET['rate']
     SpotipyFunctions.ratePlaylists(rating)
@@ -419,7 +423,7 @@ def rate(request):
         {
             'name': SpotipyFunctions.displayname,
             'picture': SpotipyFunctions.profile_pic,
-            'playlist': playlistDisplay
+            'playlist': playlistDisplay,
         }
     )
 
