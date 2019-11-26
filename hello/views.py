@@ -446,7 +446,6 @@ def rate(request):
 def surpriseme(request):
     playlistDisplay = SpotipyFunctions.presentPlaylists()
     surpriseObject = surprisePlaylistClass()
-    surpriseObject.surpriseSearch()
     passId = surpriseObject.savePlaylist()
     url = surpriseObject.showPlaylist(passId)
     profile_pic = SpotipyFunctions.getProfilePic()    
@@ -457,6 +456,6 @@ def surpriseme(request):
             'name': SpotipyFunctions.displayname,
             'playlist': playlistDisplay,
             'playlistUrl': url,
-            'picutre': profile_pic
+            'picture': profile_pic,
         }
     )

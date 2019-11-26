@@ -1,13 +1,6 @@
 
 .playlist-msg {
-  display: grid;
-  grid-template: 
-  "msg rating" 100px
-  "playlist playlist" 1fr / 1000px 1fr;
-  background: gray;
-  margin: 100% 300%;
-  border: 1px solid black;
-  border-radius: 10px;
+    width: 100%;
 }
 
 .msg {
@@ -16,7 +9,7 @@
   color:white;
   /* border-top-right-radius: 10px; */
   border-top-left-radius: 10px;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
@@ -64,10 +57,3 @@
     color: green;
 }
 
-.iframe-cont {
-  grid-area:playlist;
-}
-
-iframe {
-
-}

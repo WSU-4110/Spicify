@@ -24,84 +24,59 @@ playlist_name = 'Surprise Me Playlist'  # for the post-creation page
 songs = [] # empty list to store searched songs
 randsongs = [] # empty list to store random songs
 
+# Search query and results
+searchResults3 = spotifyObject.search('genre:rock+pop', 50, 0, 'track')
+tracks = searchResults3['tracks']['items']
 
+for x in tracks: #store searched songs in lists
+    if x['popularity'] <= 70:
+        songs.append(x['uri'])
+        # print(x['name'])
+        # print(x['popularity'])
+
+
+# Second Search query and results
+searchResults3 = spotifyObject.search('genre:country+southern', 50, 0, 'track')
+tracks = searchResults3['tracks']['items']
+
+for x in tracks: #store searched songs in lists
+    if x['popularity'] <= 70:
+        songs.append(x['uri'])
+        # print(x['name'])
+        # print(x['popularity'])
+
+# Third Search query and results
+searchResults3 = spotifyObject.search('genre:electroic+dance', 50, 0, 'track')
+tracks = searchResults3['tracks']['items']
+
+for x in tracks: #store searched songs in lists
+    if x['popularity'] <= 70:
+        songs.append(x['uri'])
+        # print(x['name'])
+        # print(x['popularity'])
+
+# Fourth Search query and results
+searchResults3 = spotifyObject.search('genre:italian+hip+hop', 50, 0, 'track')
+tracks = searchResults3['tracks']['items']
+
+for x in tracks: #store searched songs in lists
+    if x['popularity'] <= 70:
+        songs.append(x['uri'])
+        # print(x['name'])
+        # print(x['popularity'])
+
+# Fifth Search query and results
+searchResults3 = spotifyObject.search('genre:alternative+indie', 50, 0, 'track')
+tracks = searchResults3['tracks']['items']
+
+for x in tracks: #store searched songs in lists
+    if x['popularity'] <= 70:
+        songs.append(x['uri'])
+        # print(x['name'])
+        # print(x['popularity'])
 
 class surprisePlaylistClass():
     
-    def surpriseSearch(self):
-        # Search query and results
-        searchResults3 = spotifyObject.search('genre:rock', 5, 0, 'track')
-        tracks = searchResults3['tracks']['items']
-
-        for x in tracks: #store searched songs in lists
-            if x['popularity'] <= 70:
-                songs.append(x['uri'])
-                # print(x['name'])
-                # print(x['popularity'])
-
-
-        # Second Search query and results
-        searchResults3 = spotifyObject.search('genre:country', 5, 0, 'track')
-        tracks = searchResults3['tracks']['items']
-
-        for x in tracks: #store searched songs in lists
-            if x['popularity'] <= 70:
-                songs.append(x['uri'])
-                # print(x['name'])
-                # print(x['popularity'])
-
-        # Third Search query and results
-        searchResults3 = spotifyObject.search('genre:electroic+dance', 5, 0, 'track')
-        tracks = searchResults3['tracks']['items']
-
-        for x in tracks: #store searched songs in lists
-            if x['popularity'] <= 70:
-                songs.append(x['uri'])
-                # print(x['name'])
-                # print(x['popularity'])
-
-        # Fourth Search query and results
-        searchResults3 = spotifyObject.search('genre:urban+contemporary', 5, 0, 'track')
-        tracks = searchResults3['tracks']['items']
-
-        for x in tracks: #store searched songs in lists
-            if x['popularity'] <= 70:
-                songs.append(x['uri'])
-                # print(x['name'])
-                # print(x['popularity'])
-
-        # Fifth Search query and results
-        searchResults3 = spotifyObject.search('genre:italian+hip+hop', 5, 0, 'track')
-        tracks = searchResults3['tracks']['items']
-
-        for x in tracks: #store searched songs in lists
-            if x['popularity'] <= 70:
-                songs.append(x['uri'])
-                # print(x['name'])
-                # print(x['popularity'])
-
-        # Sixth Search query and results
-        searchResults3 = spotifyObject.search('genre:bachata', 5, 0, 'track')
-        tracks = searchResults3['tracks']['items']
-
-        for x in tracks: #store searched songs in lists
-            if x['popularity'] <= 70:
-                songs.append(x['uri'])
-                # print(x['name'])
-                # print(x['popularity'])
-            
-
-        
-        # Seventh Search query and results
-        searchResults3 = spotifyObject.search('genre:indie+pop', 5, 0, 'track')
-        tracks = searchResults3['tracks']['items']
-
-        for x in tracks: #store searched songs in lists
-            if x['popularity'] <= 70:
-                songs.append(x['uri'])
-                # print(x['name'])
-                # print(x['popularity'])
-
     def savePlaylist(self):
 
         for x in range(0,30):
@@ -118,3 +93,5 @@ class surprisePlaylistClass():
         playlistUrl = 'https://open.spotify.com/embed/playlist/%s' % (passedId)
         # print(playlistUrl)
         return playlistUrl
+
+
