@@ -1,3 +1,8 @@
 [
+  "test_pytest.py::test_30sPlaylist",
+  "test_pytest.py::test_40sPlaylist",
+  "test_pytest.py::test_50sPlaylist",
+  "test_pytest.py::test_60sPlaylist",
+  "test_pytest.py::test_80sPlaylist",
   "test_pytest.py::test_70sPlaylist"
 ]
