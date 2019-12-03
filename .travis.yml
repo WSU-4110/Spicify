@@ -5,6 +5,6 @@ before install:
  - pip3 install --upgrade pip
  - choco install python --version 3.7.4
 script: 
- - test_pytest
+ - test_pytest.py
 env: 
  - DJANGO_VERSION=2.2.6
