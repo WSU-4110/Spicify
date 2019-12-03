@@ -27,7 +27,7 @@ displayname = user['display_name'] # name
 followers = user['followers']['total'] # followers
 userId = user['id']
 
-profile_pic = user['images'][0]['url']  # profile pic
+#profile_pic = user['images'][0]['url']  # profile pic
 
 
 def getProfilePic():
