@@ -2,7 +2,7 @@ language: Python
 python:
  - "3.7.4"
 before install:
- - pip install python
+ - pip3 install --upgrade pip
 script: 
  - test_pytest
 env: 
