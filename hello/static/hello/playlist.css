@@ -5,13 +5,13 @@
   "msg rating" 100px
   "playlist playlist" 1fr / 1000px 1fr;
   background: gray;
-  margin: 100% 300%;
+  margin: 50px 200% 0 25px;
   border: 1px solid black;
   border-radius: 10px;
 }
 
 .msg {
-  grid-area:msg;
+  grid-area: msg;
   background: rgb(1, 109, 1);
   color:white;
   /* border-top-right-radius: 10px; */
@@ -47,7 +47,7 @@
     color:#ccc;
 }
 .rate:not(:checked) > label:before {
-    content: '★';
+    content: '★ ';
 }
 .rate > input:checked ~ label {
     color: green;    

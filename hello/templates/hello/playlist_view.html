@@ -1,4 +1,3 @@
-
 {% extends 'hello/layout.html' %}
 
 {% block content %}
@@ -10,7 +9,7 @@
         </div>
         <form action="rate">
             <div class="rate">
-                
+
                 <input type="submit" id="star5" name="rate" value="5" />
                 <label for="star5" title="text">5 stars</label>
                 <input type="submit" id="star4" name="rate" value="4" />
@@ -21,13 +20,13 @@
                 <label for="star2" title="text">2 stars</label>
                 <input type="submit" id="star1" name="rate" value="1" />
                 <label for="star1" title="text">1 star</label>
-            
+
             </div>
         </form>
-        <div class ="iframe-cont">            
-            <iframe src="{{playlistUrl}}" width="1000" height="750" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <div class="iframe-cont">
+            <iframe src="{{playlistUrl}}" width="1000" height="750" frameborder="0" allowtransparency="true"
+                allow="encrypted-media"></iframe>
         </div>
     </div>
 </div>
-
 {% endblock %}
