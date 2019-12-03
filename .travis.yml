@@ -6,7 +6,7 @@ before install:
  - choco install python --version 3.7.4
  - pip install -U pytest
  - pip install spotipy
- - 
+ - pip install git+https://github.com/plamere/spotipy.git --upgrade
  - pip install Pillow
 env: 
  - DJANGO_VERSION=2.2.6
