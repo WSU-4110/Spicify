@@ -4,13 +4,12 @@ python:
 before install:
  - pip3 install --upgrade pip
  - choco install python --version 3.7.4
- - pip install -U pytest
- - pip install spotipy
- - pip install git+https://github.com/plamere/spotipy.git --upgrade
- - pip install Pillow
+ - python3 -m pip install -U pytest
+ - python3 -m pip install spotipy
+ - python3 -m pip install git+https://github.com/plamere/spotipy.git --upgrade
+ - python3 -m pip install Pillow
 env: 
  - DJANGO_VERSION=2.2.6
- - PATH=/c/Python37:/c/Python37/Scripts:$PATH
 script: 
  - python test_pytest.py
 
