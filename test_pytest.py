@@ -87,12 +87,6 @@ def test_surpriseSearch():
     assert len(songs) > 2
 
 
-
-
-
-
-
-
 def test_internationalPlaylist():
         # setting up variables
         spotifyObject.user_playlist_create(user['id'], 'International Playlist')
@@ -110,9 +104,10 @@ def test_internationalPlaylist():
         playlistUser = searchResults['playlists']['items'][0]['owner']['display_name']
 
         playlist = spotifyObject.user_playlist_tracks(user=playlistUser, playlist_id=playlistResult)
-        
+
 
         assert(playlist != 0)
+
 
 def test_drivingTracks_uri():
     tracks = []
@@ -140,7 +135,7 @@ def test_drivingTracks_uri():
                 selectedDrivingTracks_uri.append(track_data['uri'])
                 assert(track_data['liveness'] <= 1.0)
         assert(len(selectedDrivingTracks_uri) > 0)
-        
+
 
 def test_surpriseSearch():
         # Search query and results
