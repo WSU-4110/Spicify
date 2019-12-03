@@ -1,4 +1,4 @@
 language: Python
 python:
 - "3.7.4
-script:test_pytest
+script:test_pytest.py
