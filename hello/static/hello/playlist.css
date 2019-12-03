@@ -8,6 +8,8 @@
   margin: 50px 200% 0 25px;
   border: 1px solid black;
   border-radius: 10px;
+    width: 100%;
+
 }
 
 .msg {
@@ -16,7 +18,7 @@
   color:white;
   /* border-top-right-radius: 10px; */
   border-top-left-radius: 10px;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
@@ -63,6 +65,7 @@
 .rate > label:hover ~ input:checked ~ label {
     color: green;
 }
+
 
 .iframe-cont {
   grid-area:playlist;
