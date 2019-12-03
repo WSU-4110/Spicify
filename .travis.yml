@@ -5,9 +5,11 @@ before install:
  - pip3 install --upgrade pip
  - choco install python --version 3.7.4
  - pip install -U pytest
+install:
+ - pip install -r requirements.txt
 env: 
  - DJANGO_VERSION=2.2.6
  - PATH=/c/Python37:/c/Python37/Scripts:$PATH
 script: 
- - python3 test_pytest.py || python test_pytest.py
+ - python tests.py
 
