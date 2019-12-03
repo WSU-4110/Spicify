@@ -9,5 +9,5 @@ env:
  - DJANGO_VERSION=2.2.6
  - PATH=/c/Python37:/c/Python37/Scripts:$PATH
 script: 
- - python tests.py
+ - python test_pytest.py
 
