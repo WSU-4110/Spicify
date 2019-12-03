@@ -7,6 +7,7 @@ before install:
  - pip install -U pytest
 env: 
  - DJANGO_VERSION=2.2.6
+ - PATH=/c/Python37:/c/Python37/Scripts:$PATH
 script: 
  - python3 test_pytest.py || python test_pytest.py
 
