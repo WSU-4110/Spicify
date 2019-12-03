@@ -30,3 +30,6 @@ Next the Spotify Api (Spotipy) package needs to be installed. Be sure to install
 The pip command is not always the most updated version of Spotipy available. We also used the following command to install Spotipy to ensure we were using the latest version and had access to all of Spotipy's functionality: **pip install git+https://github.com/plamere/spotipy.git --upgrade**
           
 Once all of your project files have been downloaded into your enviornment the project can be ran using the command: **python manage.py runserver**
+
+Other pip installations you need to run in the VS Code command line
+**pip install pillow**
