@@ -38,8 +38,9 @@ def layout(request):
         'hello/layout.html',
         {
             'name': SpotipyFunctions.displayname,
-            'picture': profile_pic,
-            'playlist': playlistDisplay,
+            'picture': SpotipyFunctions.profile_pic,
+            'playlist': playlistDisplay
+
         }
     )
     
@@ -111,7 +112,7 @@ def yearRange(request):
             'playlistName': YearRangePlaylist.playlist_name,
             'playlist': playlistDisplay,
             'name': SpotipyFunctions.displayname,
-            'picture': profile_pic,
+            'picture': SpotipyFunctions.profile_pic,
 
         }
     )
