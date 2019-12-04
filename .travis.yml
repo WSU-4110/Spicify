@@ -1,6 +1,8 @@
 language: Python
 python:
  - "3.7.4"
+env: 
+ - DJANGO_VERSION=3.7.0
 before install:
  - pip3 install --upgrade pip
  - choco install python --version 3.7.4
@@ -8,12 +10,6 @@ before install:
  - pip3 install -U pytest
  - pip3 install git+https://github.com/plamere/spotipy.git --upgrade
  - pip3 install Pillow
-env: 
- - DJANGO_VERSION=3.7.0
-deploy:
-  provider: Spotify
-  api_key:
-    secure: "BQBV0Kfdhy9C4lAHEIY40l6se4HdeUz9fUCpC1XGhw1T-3AeZXYO5uAUGgQwjcWT6RVW6Lvb3SUuQmPy9WU0AdPPVkamoXpyHf8bFBECGFTJotag-ZAbHM0tXfgau5Amz7XLpeHiqKXPR-2_UjSRy8_ND0KXGehWiOMLiMTZ-n8ZKH5sqmjscpQDLMfkWlqI0e6AU3UHrEWCzWpVCNAS0tUpsUN2hAxK0Eg6CoYffheJ2xX_fpUIPgYmZnU1f7hC03ZyYa6_J6UJArDIcHcGPw", "token_type": "Bearer", "expires_in": 3600, "refresh_token": "AQDFL3kgini8AUy8UDEtAtXzi82qB11ZhkJHICwjFKvfig9hBlHjcIF_idoxnEQX9JeqSrg2NUZ6weeVwKhXJpJMd_B9rINfM23zT-HHdj2ZZ_SYTvpM2pFKwQdtP8Uosxo"
 script: 
  - python hello/test_pytest.py
 
