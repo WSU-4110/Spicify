@@ -1,6 +1,5 @@
 # from hello import YearRangePlaylist
 import pytest
-import spotipy
 songs = []
 
 username = '22kpgi2vtrlebcei6eu37db7y'
