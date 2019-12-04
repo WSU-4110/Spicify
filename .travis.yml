@@ -7,7 +7,6 @@ before install:
  - pip install -U pytest
  - pip3 install --upgrade pip
  - choco install python --version 3.7.4
- - pip3 install Pillow
 install:
  - pip install spotipy
 script: 
