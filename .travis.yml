@@ -5,12 +5,8 @@ before install:
  - pip3 install --upgrade pip
  - choco install python --version 3.7.4
  - pip3 install -U pytest
- - pip3 install spotipy
  - pip3 install git+https://github.com/plamere/spotipy.git --upgrade
  - pip3 install Pillow
- - pip3 install --user virtualenv
- - export DJANGO_SETTINGS_MODULE=hello.settings
- - export PYTHONPATH=$HOME/builds/gia_marchetti/https://github.com/WSU-4110/Spicify.git
 env: 
  - DJANGO_VERSION=3.7.0
 script: 
