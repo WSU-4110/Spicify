@@ -38,8 +38,9 @@ def layout(request):
         'hello/layout.html',
         {
             'name': SpotipyFunctions.displayname,
-            'picture': profile_pic,
-            'playlist': playlistDisplay,
+            'picture': SpotipyFunctions.profile_pic,
+            'playlist': playlistDisplay
+
         }
     )
     

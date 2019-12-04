@@ -4,10 +4,10 @@ Playlist generator using the Spotify Api!
 
 ### Functionalities
 
-The main functionality of this web application is to ge a tool to generate new playlists for music enthusiasts or casual listeners. Spicify has categories of playlists to choose from.The categories include: Workout, General Driving, International, Year Range (1930s, 1940s, 1950s, 1960s, 1970s, 1980s, 1990s, and 2000s), Surprise Me, Study and Related Artists. A user can click on any of the category buttons and playlist will be generated and saved into their Spotify library.
+The main functionality of this web application is to create a tool to generate new playlists for music enthusiasts or casual listeners. Spicify has categories of playlists to choose from.The categories include: Workout, General Driving, International, Year Range (1930s, 1940s, 1950s, 1960s, 1970s, 1980s, 1990s, and 2000s), Surprise Me, Study and Related Artists(Post Malone, Selena Gomez, Rezz, A Tribe Called Quest, Travis Scott, Tim McMcgraw, Nancy Ajram and Prince). A user can click on any of the category buttons and a playlist will be generated and saved into their Spotify library as well as dispalyed in the Spicify web app window.
 
-There is also the functionaltiy of the current user's Spotify username and playlists displayed on the left hand side navigation bar.
-Users can also rate Spicify's generated playlist on a scale of one to five stars.
+There is also the functionaltiy of the current user's Spotify username, Spotify profile picture and playlists displayed on the left hand side navigation bar.
+Users can also rate Spicify's generated playlists on a scale of one to five stars.
 After a user creates any of Spicify's playlist the new playlist will display in the application window.
 
 ### Purpose

@@ -28,8 +28,7 @@ body {
     background: #2b2929;
     /* height: 90vh; */
     display: grid;
-    grid-template-rows: .1fr 5px 1fr;   
-    max-width: 250px;
+    grid-template-rows: .1fr 5px 1fr 5px .3fr;   
     min-width:240px;
     min-height: 4em;
     margin-right: 20px;
@@ -147,6 +146,14 @@ body {
   padding-bottom:3px;
 }
 
+/* .extra-function {
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 1px;
+} */
+
 .playlist-container .bottom-header {
   list-style: none;
   text-decoration: 0;
@@ -158,22 +165,23 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: green; 
+  background: #2b2929; 
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #bbb; 
+  background: rgb(1, 77, 1); 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: rgb(0, 44, 0); 
+  border: 1px solid rgb(1, 77, 1);
 }
 
 .bottom-header li {
@@ -256,6 +264,7 @@ footer {
     .dash-nav {
         height: 100vh;
         position: fixed;
+        max-width:250px;
       
     }
     .dash-nav ul {
@@ -275,7 +284,17 @@ footer {
     }
 }
 
- @media only screen and (max-width: 1000px) {
+@media (max-width: 1000px) {
+  .buts {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+ @media only screen and (max-width: 690px) {
     body {
         grid-template:
         "nav" 1fr
@@ -285,7 +304,8 @@ footer {
 
     .dash-nav {
         grid-area: nav;
-        height: 50%;
+        height: 100%;
+        width: 100%;
     }
 
     .dash-nav ul {
