@@ -6,10 +6,12 @@ env:
 before install:
  - pip3 install --upgrade pip
  - choco install python --version 3.7.4
- - choco install spotipy
+ - pip3 install spotipy
  - pip3 install -U pytest
- - choco install git+https://github.com/plamere/spotipy.git --upgrade
+ - pip3 install git+https://github.com/plamere/spotipy.git --upgrade
  - pip3 install Pillow
+install:
+ - pip install spotipy
 script: 
  - python hello/test_pytest.py
 
