@@ -4,12 +4,12 @@ python:
 env: 
  - DJANGO_VERSION=3.7.0
 before install:
+ - pip install -U pytest
  - pip3 install --upgrade pip
  - choco install python --version 3.7.4
  - pip3 install Pillow
 install:
- - pip install -U pytest
  - pip install spotipy
 script: 
- - python hello/test_pytest.py
+ - pytest -v hello/test_pytest.py
 
