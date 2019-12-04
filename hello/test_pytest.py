@@ -5,8 +5,8 @@ songs = []
 
 username = '22kpgi2vtrlebcei6eu37db7y'
 scope = 'playlist-read-collaborative playlist-modify-private playlist-modify-public playlist-read-private user-modify-playback-state user-read-currently-playing user-read-playback-state user-read-private user-read-email user-library-modify user-library-read user-follow-modify user-follow-read user-read-recently-played user-top-read streaming app-remote-control'
-token = 'BQBV0Kfdhy9C4lAHEIY40l6se4HdeUz9fUCpC1XGhw1T-3AeZXYO5uAUGgQwjcWT6RVW6Lvb3SUuQmPy9WU0AdPPVkamoXpyHf8bFBECGFTJotag-ZAbHM0tXfgau5Amz7XLpeHiqKXPR-2_UjSRy8_ND0KXGehWiOMLiMTZ-n8ZKH5sqmjscpQDLMfkWlqI0e6AU3UHrEWCzWpVCNAS0tUpsUN2hAxK0Eg6CoYffheJ2xX_fpUIPgYmZnU1f7hC03ZyYa6_J6UJArDIcHcGPw", "token_type": "Bearer", "expires_in": 3600, "refresh_token": "AQDFL3kgini8AUy8UDEtAtXzi82qB11ZhkJHICwjFKvfig9hBlHjcIF_idoxnEQX9JeqSrg2NUZ6weeVwKhXJpJMd_B9rINfM23zT-HHdj2ZZ_SYTvpM2pFKwQdtP8Uosxo'
-# token will expire must be renewed before test is run to refresh token uncomment line 2 of test_pytest.py
+token = 'BQA4VLI_ncjWGLrubp711AZy3ID5sVEurbo5Wk4iDkEIO0t8fnc9Oi2IxTshx9prSO_bdTDXzvl_wZ3wi6fccq0STs1Vt_YCaGVP9_f83RECHZkDWn31V310c5oSN-OvunaVyGm6kxGifa7tfVMcedeNzvPLTcLIydUWDPSm4rgB6p9vrl4rTFtoy_KInQhfOXXD-K9PLXbuvrpYzYG1zqeqj538MijD6Hp1hGh8pCNlRVoiaRumzped8gW53w9NHNwglU6-4ZG31ceT8y89-A", "token_type": "Bearer", "expires_in": 3600, "refresh_token": "AQCZx3JTYNMVDmXDZVYhWILm2tVYfWQNn9Hx7L7tT20o0hgYyzpdrn3rfYSX3xMpSXcmnQfD2Rm4_R5VMIhsesb7Ze3CH3RXixCQHX2USsK67OlDyblu2L5g6b7VeIcAtZ8'
+# token will expire must be renewed before test is run to refresh token delete the cache and run the project again, the new token with be in the new cache
 
 def test_unclepostyPlaylist():
     spotifyObject = spotipy.Spotify(auth=token)     # create object of type spotipy
