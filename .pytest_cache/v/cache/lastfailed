@@ -1,0 +1,8 @@
+{
+  "hello/test_pytest.py::test_atribecalledquestPlaylist": true,
+  "hello/test_pytest.py::test_rezzPlaylist": true,
+  "hello/test_pytest.py::test_selenagomezPlaylist": true,
+  "hello/test_pytest.py::test_timmcgrawPlaylist": true,
+  "hello/test_pytest.py::test_travisscottPlaylist": true,
+  "hello/test_pytest.py::test_unclepostyPlaylist": true
+}

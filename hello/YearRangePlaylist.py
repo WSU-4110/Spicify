@@ -99,8 +99,7 @@ class yearRangePlaylistClass():
 
         Playlists = spotifyObject.current_user_playlists()['items'][0]['uri']
         playlistId = newPlaylist
-        return playlistId
-
+        return 
     
 
     def fourtiesPlaylist(self):
