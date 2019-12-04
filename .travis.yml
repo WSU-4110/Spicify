@@ -1,4 +1,6 @@
 language: Python
+virtualenv:
+  system_site_packages: true
 python:
  - "3.7.4"
 before install:
