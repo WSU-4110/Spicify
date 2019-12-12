@@ -24,30 +24,69 @@
 
     <nav class="dash-nav">
         <ul class="top-header">
-            <div class="logo"><a href="{% url 'category' %}">Spicify</a></div>
-            <li> <a class="navButton" href="{% url 'category' %}"> <i style="font-size:24px" class="fa">&#xf015;</i> Home </a> </li>
-            <li class="message">
-                <div class="user-pic ay">
-                    <img src="{{picture}}" alt="">
+            <div class="head-nav">
+                <div class="navbar-sandwich">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-                <p>{{name}}</p>
-            </li>
+                <div class="logo"><a href="{% url 'home' %}">Spicify</a></div>
+            </div>
+            <div class="top-head1">
+                <li> <a class="navButton" href="{% url 'category' %}"> <i style="font-size:24px" class="fa">&#xf015;</i>
+                        Home </a> </li>
+                <li class="message">
+                    <div class="user-pic ay">
+                        <img src="{{picture}}" alt="">
+                    </div>
+                    <p>{{name}}</p>
+                </li>
+            </div>
         </ul>
         <hr class="hr">
         <div class="playlist-container">
             <h4 class="playlist-title">Playlists</h4>
             <ul class="bottom-header">
-                    {% for i in playlist%}
-                    <li>{{i}}</li>
-                    {% endfor %}
+                {% for i in playlist%}
+                <li>{{i}}</li>
+                {% endfor %}
             </ul>
         </div>
-        <!-- <hr class="hr">
-        <div class="extra-functions">
-            <h4 class="extra-function">Merge Playlists</h4>
-        </div> -->
     </nav>
+
     {% block content %}
     {% endblock %}
-</body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        // gives sandwich menu button the toggle for menu
+            $('.navbar-sandwich').on("click", function () {
+                $('.top-head1').toggleClass('inactive')
+                $('.playlist-container').toggleClass('inactive')
+            });
+
+
+            //gives top-head1 and playlist-cont the inactive class when window is shrunken down to 641px
+            // so basically makes the menu invisible
+            (function ($) {
+                var $window = $(window),
+                    $top = $('.top-head1'),
+                    $playlist = $('.playlist-container');
+
+                function resize() {
+                    if ($window.width() < 641) {
+                        return ($top.addClass('inactive') && $playlist.addClass('inactive'));
+                    }
+
+                    $top.removeClass('inactive')
+                    $playlist.removeClass('inactive')
+                }
+
+                $window
+                    .resize(resize)
+                    .trigger('resize');
+            })(jQuery);
+    </script>
+
+ </body>
 </html>
